@@ -15,7 +15,7 @@ const { title, theme } = Astro.props;
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content={theme}/>
+		<meta name="theme-color" content={theme} />
 		<title>{title}</title>
 	</head>
 	<body>
@@ -23,5 +23,7 @@ const { title, theme } = Astro.props;
 	</body>
 </html>
 <style is:global>
-	
+	:root {
+		color-scheme: dark;
+	}
 </style>
