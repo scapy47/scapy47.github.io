@@ -3,18 +3,19 @@ import Navbar from "@components/navbar.astro";
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Hello there" theme="" className="bg-red-100">
+<Layout
+	title="Hello there"
+	theme=""
+	className="bg-[radial-gradient(circle_at_top,black_60%_50%,red_64%,black_50%,red_135%)]"
+>
 	<!-- <Navbar /> -->
 	<main class="">
 		<section class="relative">
 			<img src="/main.png" alt="" class="h-auto w-full" />
 			<div
-				class="bg-black text-white rounded-3xl p-4 absolute -z-20 top-0 perspective-a"
+				class="bg-white rounded-3xl p-4 absolute -20 top-[20%] left-[42%] perspective-a w-[calc(100vw/2)] h-[calc(100vw/4)] -z-10 m-0"
 			>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Voluptate dignissimos pariatur libero natus. Dignissimos hic
-				adipisci veniam nostrum. Voluptatem illo perferendis animi rem
-				ad odit ab doloremque, eligendi beatae quae.
+				<h1 class="">hello</h1>
 			</div>
 		</section>
 	</main>
@@ -22,9 +23,7 @@ import Layout from "@layouts/Layout.astro";
 		.perspective-a {
 			/* perspective defines how for away a element is form user (function version is element specific)*/
 			transform-style: preserve-3d;
-			transform: perspective(800px) rotate3d(0, -1, 0, 64deg);
-			left: 26%;
-			top: 15%;
+			transform: perspective(60vw) rotate3d(0, -1, 0, 45deg);
 		}
 		.perspective-b {
 			transform-style: preserve-3d;
