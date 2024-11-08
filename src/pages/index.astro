@@ -1,9 +1,54 @@
 ---
-import Layout from "@layouts/Layout.astro";
 import Navbar from "@components/navbar.astro";
+import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Welcome to Astro." theme="">
-	<Navbar/>
-	<main></main>
+<Layout title="Hello there" theme="" className="bg-red-100">
+	<!-- <Navbar /> -->
+	<main class="">
+		<section class="relative">
+			<img src="/main.png" alt="" class="h-auto w-full" />
+			<div
+				class="bg-black text-white rounded-3xl p-4 absolute -z-20 top-0 perspective-a"
+			>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Voluptate dignissimos pariatur libero natus. Dignissimos hic
+				adipisci veniam nostrum. Voluptatem illo perferendis animi rem
+				ad odit ab doloremque, eligendi beatae quae.
+			</div>
+		</section>
+	</main>
+	<style>
+		.perspective-a {
+			/* perspective defines how for away a element is form user (function version is element specific)*/
+			transform-style: preserve-3d;
+			transform: perspective(800px) rotate3d(0, -1, 0, 64deg);
+			left: 26%;
+			top: 15%;
+		}
+		.perspective-b {
+			transform-style: preserve-3d;
+			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
+			left: 26%;
+			top: 15%;
+		}
+		.perspective-c {
+			transform-style: preserve-3d;
+			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
+			left: 26%;
+			top: 15%;
+		}
+		.perspective-d {
+			transform-style: preserve-3d;
+			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
+			left: 26%;
+			top: 15%;
+		}
+		.perspective-e {
+			transform-style: preserve-3d;
+			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
+			left: 26%;
+			top: 15%;
+		}
+	</style>
 </Layout>

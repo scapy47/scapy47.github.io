@@ -2,9 +2,10 @@
 interface Props {
 	title: string;
 	theme: string;
+	className: string;
 }
 
-const { title, theme } = Astro.props;
+const { title, theme, className } = Astro.props;
 ---
 
 <!doctype html>
@@ -18,7 +19,18 @@ const { title, theme } = Astro.props;
 		<meta name="theme-color" content={theme} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={className}>
 		<slot />
 	</body>
 </html>
+<style is:global>
+	@tailwind base;
+	@tailwind components;
+	@tailwind utilities;
+
+	@layer base {
+		h1 {
+			@apply text-xl;
+		}
+	}
+</style>
