@@ -29,6 +29,11 @@ const { title, theme, className } = Astro.props;
 	@tailwind utilities;
 
 	@layer base {
+		:root {
+			--color-pri: #cc0033;
+			--color-sec: #990033;
+			--color-ter: #660033;
+		}
 		h1 {
 			@apply text-xl;
 		}

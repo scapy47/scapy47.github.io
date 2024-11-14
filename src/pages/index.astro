@@ -1,19 +1,23 @@
 ---
-// import Navbar from "@components/navbar.astro";
 import Layout from "@layouts/Layout.astro";
+import { Image } from "astro:assets";
+import heroImage from "@/assets/main.png";
 ---
 
 <Layout
 	title="Hello there"
 	theme=""
-	className="bg-[radial-gradient(circle_at_top,black_60%_50%,red_64%,black_50%,red_135%)]"
+	className="bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
 >
-	<!-- <Navbar /> -->
 	<main class="">
+		<nav
+			class="flex flex-col items-center fixed right-0 bg-[var(--color-ter)] w-4 h-full z-10"
+		>
+		</nav>
 		<section class="relative">
-			<img src="/main.png" alt="" class="h-auto w-full" />
+			<Image src={heroImage} alt=" " class="h-auto w-full pointer-events-none" />
 			<div
-				class="bg-white rounded-3xl p-4 absolute -20 top-[20%] left-[42%] perspective-a w-[calc(100vw/2)] h-[calc(100vw/4)] -z-10 m-0"
+				class="bg-black border-[var(--color-sec)] border-2 rounded-2xl p-4 absolute -20 top-[20%] left-[42%] perspective-a w-[calc(100vw/2)] h-[40%] -z-10 m-0"
 			>
 				<h1 class="">hello</h1>
 			</div>
