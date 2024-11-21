@@ -4,54 +4,46 @@ import { Image } from "astro:assets";
 import heroImage from "@/assets/main.png";
 ---
 
-<Layout
-	title="Hello there"
-	theme=""
-	className="bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
->
+<Layout title="Hello there" theme="">
+	<nav
+		class="flex fixed justify-around items-center backdrop-blur-3xl w-[100dvh] z-50 list-none font-extrabold uppercase border-cyan-300 border-2 rotate-90"
+	>
+		<li class="my-6">hello</li>
+		<li class="my-6">where</li>
+		<li class="my-6">what</li>
+		<li class="my-6">who</li>
+	</nav>
 	<main class="">
-		<nav
-			class="flex flex-col items-center fixed right-0 bg-[var(--color-ter)] w-4 h-full z-10"
+		<section
+			class="relative bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)] h-[100svh]"
 		>
-		</nav>
-		<section class="relative">
-			<Image src={heroImage} alt=" " class="h-auto w-full pointer-events-none" />
 			<div
-				class="bg-black border-[var(--color-sec)] border-2 rounded-2xl p-4 absolute -20 top-[20%] left-[42%] perspective-a w-[calc(100vw/2)] h-[40%] -z-10 m-0"
+				class="bg-black border-[var(--color-sec)] border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%]"
 			>
-				<h1 class="">hello</h1>
+				<p>
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+					Animi, minus ullam alias ex facilis voluptatibus fugiat rem
+					tempora. Dicta sed laborum ex distinctio nobis in error,
+					voluptatum assumenda dolorem fugit. Lorem, ipsum dolor sit
+					amet consectetur adipisicing elit. Debitis a officia quaerat
+					molestias magnam recusandae tempora. Atque nostrum quidem
+					nulla ea architecto consequuntur reiciendis vitae, eius
+					dolorum similique veritatis? Non dolor cupiditate, possimus
+					corporis numquam molestias modi tempora perferendis
+					doloremque aperiam deleniti cum recusandae.
+				</p>
 			</div>
+			<Image
+				src={heroImage}
+				alt=""
+				class="w-full h-full pointer-events-none center bg-center bg-no-repeat relative z-10 object-cover object-left"
+			/>
 		</section>
 	</main>
 	<style>
-		.perspective-a {
-			/* perspective defines how for away a element is form user (function version is element specific)*/
+		div.perspective-a {
 			transform-style: preserve-3d;
-			transform: perspective(60vw) rotate3d(0, -1, 0, 45deg);
-		}
-		.perspective-b {
-			transform-style: preserve-3d;
-			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
-			left: 26%;
-			top: 15%;
-		}
-		.perspective-c {
-			transform-style: preserve-3d;
-			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
-			left: 26%;
-			top: 15%;
-		}
-		.perspective-d {
-			transform-style: preserve-3d;
-			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
-			left: 26%;
-			top: 15%;
-		}
-		.perspective-e {
-			transform-style: preserve-3d;
-			transform: perspective(600px) rotate3d(0, -1, 0, 64deg);
-			left: 26%;
-			top: 15%;
+			transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
 		}
 	</style>
 </Layout>

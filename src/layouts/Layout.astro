@@ -30,9 +30,14 @@ const { title, theme, className } = Astro.props;
 
 	@layer base {
 		:root {
+			color-scheme: dark light;
 			--color-pri: #cc0033;
 			--color-sec: #990033;
 			--color-ter: #660033;
+		}
+		html,
+		body {
+			@apply h-full w-full m-0 p-0;
 		}
 		h1 {
 			@apply text-xl;
