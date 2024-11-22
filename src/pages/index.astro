@@ -6,12 +6,12 @@ import heroImage from "@/assets/main.png";
 
 <Layout title="Hello there" theme="">
 	<nav
-		class="flex fixed justify-around items-center backdrop-blur-3xl w-[100dvh] z-50 list-none font-extrabold uppercase border-cyan-300 border-2 rotate-90"
+		class="flex fixed justify-around items-center backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
 	>
-		<li class="my-6">hello</li>
-		<li class="my-6">where</li>
-		<li class="my-6">what</li>
-		<li class="my-6">who</li>
+		<li class="m-4"><a href="">hello</a></li>
+		<li class="m-4"><a href="">where</a></li>
+		<li class="m-4"><a href="">what</a></li>
+		<li class="m-4"><a href="">who</a></li>
 	</nav>
 	<main class="">
 		<section
@@ -41,9 +41,12 @@ import heroImage from "@/assets/main.png";
 		</section>
 	</main>
 	<style>
-		div.perspective-a {
+		.perspective-a {
 			transform-style: preserve-3d;
 			transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
+		}
+		.wmode-vlr {
+			writing-mode: vertical-lr;
 		}
 	</style>
 </Layout>
