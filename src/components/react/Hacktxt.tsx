@@ -11,7 +11,7 @@ const Hacktxt = ({ text, className }: props) => {
     //  get unicode char 
     const charVec = useMemo(() => {
         const Arr: Array<string> = []
-        for (let i = 0x3041; i < 0x3096; i++) {
+        for (let i = 0x3042; i < 0x3093; i++) {
             Arr.push(String.fromCharCode(i))
         }
         return Arr
@@ -35,18 +35,21 @@ const Hacktxt = ({ text, className }: props) => {
     const runCount = useRef(0)
     const intervalRef = useRef<ReturnType<typeof setInterval>>()
     const animation = () => {
-        intervalRef.current = setInterval(() => {
-            setTxt(text.split("").map((char, index) => {
-                if (index < runCount.current) return char
-                return charVec[Math.round(Math.random() * charVec.length)]
-            }).join(""))
+        if (!intervalRef.current) {
+            intervalRef.current = setInterval(() => {
+                setTxt(text.split("").map((char, index) => {
+                    if (index < runCount.current) return char
+                    return charVec[Math.round(Math.random() * charVec.length)]
+                }).join(""))
 
-            runCount.current += 1 / 3
-        }, 90);
-
+                runCount.current += 1 / 3
+            }, 30);
+        }
+        
         if (runCount.current >= text.length) {
             if (intervalRef.current) {
                 clearInterval(intervalRef.current);
+                intervalRef.current = 0
                 runCount.current = 0
             }
         }
