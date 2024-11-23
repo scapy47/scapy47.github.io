@@ -54,6 +54,7 @@ const Hacktxt = ({ text, className }: props) => {
 
     return <span className={className}
         onClick={animation}
+        onMouseOver={animation}
         onMouseEnter={animation}
         onMouseLeave={animation}
     >{txt}</span>
