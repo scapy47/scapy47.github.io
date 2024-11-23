@@ -2,21 +2,31 @@
 import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/main.png";
+import Hacktxt from "@/components/react/Hacktxt";
 ---
 
 <Layout title="Hello there" theme="">
 	<nav
-		class="flex fixed justify-around items-center overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
+		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
 	>
-		<li class="m-4"><a href="">hello</a></li>
-		<li class="m-4"><a href="">where</a></li>
-		<li class="m-4"><a href="">what</a></li>
-		<li class="m-4"><a href="">who</a></li>
+		<li class="p-4 hover:bg-[var(--color-sec)]">
+			<a href=""><Hacktxt text="hello" client:idle /></a>
+		</li>
+		<li class="p-4 hover:bg-[var(--color-sec)]">
+			<a href=""><Hacktxt text="where" client:idle /></a>
+		</li>
+		<li class="p-4 hover:bg-[var(--color-sec)]">
+			<a href=""><Hacktxt text="what" client:idle /></a>
+		</li>
+		<li class="p-4 hover:bg-[var(--color-sec)]">
+			<a href=""><Hacktxt text="who" client:idle /></a>
+		</li>
 	</nav>
 	<main class="">
 		<section
 			class="relative bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)] h-[100svh]"
 		>
+			<!-- TODO: card dimension should be static on px or any static unit -->
 			<div
 				class="bg-black border-[var(--color-sec)] border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%]"
 			>
@@ -37,9 +47,6 @@ import heroImage from "@/assets/main.png";
 		.perspective-a {
 			transform-style: preserve-3d;
 			transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
-		}
-		.wmode-vlr {
-			writing-mode: vertical-lr;
 		}
 	</style>
 </Layout>
