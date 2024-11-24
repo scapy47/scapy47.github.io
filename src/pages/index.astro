@@ -5,7 +5,7 @@ import heroImage from "@/assets/main.png";
 import Hacktxt from "@/components/react/Hacktxt";
 ---
 
-<Layout title="Hello there" theme="">
+<Layout title="Hello there" theme="black">
 	<nav
 		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
 	>
@@ -44,6 +44,9 @@ import Hacktxt from "@/components/react/Hacktxt";
 		</section>
 	</main>
 	<style>
+		:root {
+			color-scheme: dark;
+		}
 		.perspective-a {
 			transform-style: preserve-3d;
 			transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
