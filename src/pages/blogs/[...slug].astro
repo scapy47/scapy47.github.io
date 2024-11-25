@@ -2,26 +2,31 @@
 import type { GetStaticPathsResult } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
+import BlogLayout from "@layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
     const PATHS: GetStaticPathsResult = [];
 
-    const Math = await getCollection("math");
-    Math.forEach((entry) => {
-        PATHS.push({
-            params: { slug: `${entry.collection}/${entry.slug}` },
-            props: { entry },
-        });
+    const physics = await getCollection("physics");
+    physics.forEach((entry) => {
+        if (!entry.data.working === true) {
+            PATHS.push({
+                params: { slug: `${entry.collection}/${entry.slug}` },
+                props: { entry },
+            });
+        }
     });
 
     return PATHS;
 }
 
 type Props = {
-    entry: CollectionEntry<"math">;
+    entry: CollectionEntry<"physics">;
 };
 const { entry } = Astro.props;
 const { Content } = await entry.render();
 ---
 
-<Content />
+<BlogLayout>
+    <Content />
+</BlogLayout>

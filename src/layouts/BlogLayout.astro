@@ -1,0 +1,26 @@
+---
+
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Document</title>
+    </head>
+    <body class="bg-black text-white ml-auto mr-auto max-w-3xl">
+        <slot />
+    </body>
+    <style>
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+
+        @layer base {
+            h1 {
+                @apply text-5xl
+            }
+        }
+    </style>
+</html>
