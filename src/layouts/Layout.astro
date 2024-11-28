@@ -19,7 +19,7 @@ const { title, theme, className } = Astro.props;
 		<meta name="theme-color" content={theme} />
 		<title>{title}</title>
 	</head>
-	<body class={className}>
+	<body class={className + " " + "dark:bg-black dark:text-white"}>
 		<slot />
 	</body>
 </html>
@@ -36,7 +36,7 @@ const { title, theme, className } = Astro.props;
 		}
 		html,
 		body {
-			@apply h-full w-full m-0 p-0 dark:bg-black dark:text-white;
+			@apply h-full w-full m-0 p-0;
 		}
 	}
 	@layer utilities {

@@ -5,19 +5,19 @@ import { getCollection } from "astro:content";
 import BlogLayout from "@layouts/BlogLayout.astro";
 
 export async function getStaticPaths() {
-    const PATHS: GetStaticPathsResult = [];
+    const Paths: GetStaticPathsResult = [];
 
     const physics = await getCollection("physics");
     physics.forEach((entry) => {
         if (!entry.data.working === true) {
-            PATHS.push({
+            Paths.push({
                 params: { slug: `${entry.collection}/${entry.slug}` },
                 props: { entry },
             });
         }
     });
 
-    return PATHS;
+    return Paths;
 }
 
 type Props = {

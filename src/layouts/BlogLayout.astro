@@ -5,11 +5,8 @@ const { slug } = Astro.props;
 console.log(slug);
 ---
 
-<Layout
-    className="ml-auto mr-auto max-w-2xl prose dark:prose-invert"
-    theme="black"
->
-    <main class="mt-12">
+<Layout className="ml-auto mr-auto max-w-2xl" theme="black">
+    <main class="mt-12 prose dark:prose-invert">
         <article>
             <slot />
         </article>
