@@ -1,0 +1,12 @@
+---
+const { sketch } = Astro.props;
+---
+
+<script
+    is:inline
+    define:vars={{ sketch }}
+    src="https://cdn.jsdelivr.net/npm/p5@1.9.4/lib/p5.js"
+>
+    new p5(sketch, document.getElementById("P5div"));
+</script>
+<div id="P5div"></div>
