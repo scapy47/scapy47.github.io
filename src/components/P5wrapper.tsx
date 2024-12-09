@@ -1,11 +1,12 @@
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import p5 from "p5";
 
 interface props {
-    sketch: any
+    sketch: () => any
 }
 
 const P5wrapper = ({ sketch }: props) => {
+    console.log(sketch);
 
     const canvasRef = useRef<HTMLDivElement>(null)
 
