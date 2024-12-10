@@ -10,5 +10,7 @@ import mdx from '@astrojs/mdx';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://Scapy47.github.io',
-  integrations: [tailwind(), react(), mdx()],
+  integrations: [tailwind(), react({
+    experimentalReactChildren: true,
+  }), mdx()],
 });

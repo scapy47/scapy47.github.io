@@ -45,7 +45,7 @@ const Hacktxt = ({ text, className }: props) => {
                 runCount.current += 1 / 3
             }, 30);
         }
-        
+
         if (runCount.current >= text.length) {
             if (intervalRef.current) {
                 clearInterval(intervalRef.current);
