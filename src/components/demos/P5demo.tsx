@@ -148,5 +148,5 @@ export default function P5demo() {
         }
     }, [])
 
-    return <div ref={canvasRef} />
+    return <div className="overflow-scroll" ref={canvasRef} />
 }
