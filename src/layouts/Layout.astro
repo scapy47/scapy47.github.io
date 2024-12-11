@@ -1,4 +1,6 @@
 ---
+import Posthog from "@/components/posthog.astro";
+
 interface Props {
 	title?: string;
 	theme?: string;
@@ -17,6 +19,7 @@ const { title, theme, className } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content={theme} />
+		<Posthog />
 		<title>{title}</title>
 	</head>
 	<body class={className + " " + "dark:bg-black dark:text-white"}>

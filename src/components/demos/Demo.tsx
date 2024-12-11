@@ -4,9 +4,10 @@ import { useEffect, useRef } from "react";
 interface prop {
     sketch: (p5: p5) => void;
     className?: string,
+    id?: string,
 }
 
-export default function Demo({ sketch, className }: prop) {
+export default function Demo({ sketch, className, id }: prop) {
     const canvasRef = useRef<HTMLDivElement>(null)
 
     useEffect(() => {
@@ -28,8 +29,8 @@ export default function Demo({ sketch, className }: prop) {
         return () => {
             canvasInstance.remove()
         }
-    }, [])
+    }, [sketch, className])
 
-    return <div className={className} ref={canvasRef} />
+    return <div id={id} className={className} ref={canvasRef} />
 
 }
