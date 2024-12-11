@@ -15,7 +15,7 @@ export default function Graph() {
         p5.setup = () => {
             const parent = document.getElementById("p5-container");
             if (parent) {
-                p5.createCanvas(parent.clientWidth, window.innerWidth * 0.8, p5.WEBGL).parent(parent);
+                p5.createCanvas(parent.clientWidth, window.innerWidth * 1.0, p5.WEBGL).parent(parent);
             }
             p5.textFont(font);
         };
