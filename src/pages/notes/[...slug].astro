@@ -7,19 +7,16 @@ import { render } from "astro:content";
 import { collections } from "@/content.config";
 import type { CollectionKey } from "astro:content";
 
-
 export async function getStaticPaths() {
     const Paths: GetStaticPathsResult = [];
 
     for (const key in collections) {
         if (Object.prototype.hasOwnProperty.call(collections, key)) {
             for (const entry of await getCollection(key as CollectionKey)) {
-                if (!entry.data.working === true) {
-                    Paths.push({
-                        params: { slug: entry.id },
-                        props: { entry },
-                    });
-                }
+                Paths.push({
+                    params: { slug: entry.id },
+                    props: { entry },
+                });
             }
         }
     }
