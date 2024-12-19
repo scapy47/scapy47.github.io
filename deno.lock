@@ -10,6 +10,7 @@
     "npm:@types/react-dom@^18.3.5": "18.3.5_@types+react@18.3.16",
     "npm:@types/react@^18.3.16": "18.3.16",
     "npm:astro@^5.0.5": "5.0.5_typescript@5.7.2_vite@6.0.3_zod@3.24.1",
+    "npm:chart.js@^4.4.7": "4.4.7",
     "npm:p5@^1.11.2": "1.11.2",
     "npm:react-dom@^18.3.1": "18.3.1_react@18.3.1",
     "npm:react@^18.3.1": "18.3.1",
@@ -588,6 +589,9 @@
         "@jridgewell/sourcemap-codec"
       ]
     },
+    "@kurkle/color@0.3.4": {
+      "integrity": "sha512-M5UknZPHRu3DEDWoipU6sE8PdkZ6Z/S+v4dD+Ke8IaNlpdSQah50lz1KtcFBa2vsdOnwbbnxJwVM4wty6udA5w=="
+    },
     "@mdx-js/mdx@3.1.0_acorn@8.14.0": {
       "integrity": "sha512-/QxEhPAvGwbQmy1Px8F899L5Uc2KZ6JtXwlCgJmjSTBedwOZkByYcBG4GceIGPXRDsmfxhHazuS+hlOShRLeDw==",
       "dependencies": [
@@ -1152,6 +1156,12 @@
     },
     "character-reference-invalid@2.0.1": {
       "integrity": "sha512-iBZ4F4wRbyORVsu0jPV7gXkOsGYjGHPmAyv+HiHG8gi5PtC9KI2j1+v8/tlibRvjoWX027ypmG/n0HtO5t7unw=="
+    },
+    "chart.js@4.4.7": {
+      "integrity": "sha512-pwkcKfdzTMAU/+jNosKhNL2bHtJc/sSmYgVbuGTEDhzkrhmyihmP7vUc/5ZK9WopidMDHNe3Wm7jOd/WhuHWuw==",
+      "dependencies": [
+        "@kurkle/color"
+      ]
     },
     "chokidar@3.6.0": {
       "integrity": "sha512-7VT13fmjotKpGipCW9JEQAusEPE+Ei8nl6/g4FBAmIm0GOOLMua9NDDo/DWp0ZAxCr3cPq5ZpBqmPAQgDda2Pw==",
@@ -3603,6 +3613,7 @@
         "npm:@types/react-dom@^18.3.5",
         "npm:@types/react@^18.3.16",
         "npm:astro@^5.0.5",
+        "npm:chart.js@^4.4.7",
         "npm:p5@^1.11.2",
         "npm:react-dom@^18.3.1",
         "npm:react@^18.3.1",
