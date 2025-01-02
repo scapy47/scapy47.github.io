@@ -3,9 +3,13 @@ import Layout from "./Layout.astro";
 ---
 
 <Layout className="ml-auto mr-auto max-w-2xl p-6" theme="black">
-    <main class="mt-12 prose dark:prose-invert prose-red prose-strong:text-red-600">
-        <article>
+    <header class="mt-12"></header>
+    <main class="">
+        <article
+            class="prose dark:prose-invert prose-red prose-strong:text-red-600"
+        >
             <slot />
         </article>
     </main>
+    <footer class="h-12"></footer>
 </Layout>
