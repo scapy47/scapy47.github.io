@@ -1,5 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 import tailwind from '@astrojs/tailwind';
 
@@ -12,5 +14,8 @@ export default defineConfig({
   site: 'https://Scapy47.github.io',
   integrations: [tailwind(), react({
     experimentalReactChildren: true,
-  }), mdx()],
+  }), mdx({
+    rehypePlugins: [rehypeKatex],
+    remarkPlugins: [remarkMath]
+  })],
 });

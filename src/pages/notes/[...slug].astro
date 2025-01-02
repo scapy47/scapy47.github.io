@@ -2,7 +2,7 @@
 import type { GetStaticPathsResult } from "astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
-import BlogLayout from "@layouts/BlogLayout.astro";
+import NotesLayout from "@layouts/NotesLayout.astro";
 import { render } from "astro:content";
 import { collections } from "@/content.config";
 import type { CollectionKey } from "astro:content";
@@ -31,6 +31,6 @@ const { entry } = Astro.props;
 const { Content } = await render(entry);
 ---
 
-<BlogLayout>
+<NotesLayout>
     <Content />
-</BlogLayout>
+</NotesLayout>
