@@ -33,7 +33,7 @@ const Hacktxt = ({ text, className }: props) => {
     // }
     // console.log(getInnerText(children))
     const runCount = useRef(0)
-    const intervalRef = useRef<ReturnType<typeof setInterval>>()
+    const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null)
     const animation = () => {
         if (!intervalRef.current) {
             intervalRef.current = setInterval(() => {
