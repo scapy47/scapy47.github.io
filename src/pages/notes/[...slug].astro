@@ -1,34 +1,18 @@
 ---
-import type { GetStaticPathsResult } from "astro";
-import type { CollectionEntry } from "astro:content";
 import { getCollection } from "astro:content";
 import NotesLayout from "@layouts/NotesLayout.astro";
 import { render } from "astro:content";
-import { collections } from "@/content.config";
-import type { CollectionKey } from "astro:content";
 
 export async function getStaticPaths() {
-    const Paths: GetStaticPathsResult = [];
-
-    for (const key in collections) {
-        if (Object.prototype.hasOwnProperty.call(collections, key)) {
-            for (const entry of await getCollection(key as CollectionKey)) {
-                Paths.push({
-                    params: { slug: entry.id },
-                    props: { entry },
-                });
-            }
-        }
-    }
-
-    return Paths;
+    const posts = await getCollection("notes");
+    return posts.map((post) => ({
+        params: { slug: post.id },
+        props: { post },
+    }));
 }
 
-type Props = {
-    entry: CollectionEntry<CollectionKey>;
-};
-const { entry } = Astro.props;
-const { Content } = await render(entry);
+const { post } = Astro.props;
+const { Content } = await render(post);
 ---
 
 <NotesLayout>
