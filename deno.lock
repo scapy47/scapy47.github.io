@@ -4,7 +4,7 @@
     "npm:@astrojs/check@~0.9.4": "0.9.4_typescript@5.7.3",
     "npm:@astrojs/react@^4.1.6": "4.1.6_@types+react@19.0.8_@types+react-dom@19.0.3__@types+react@19.0.8_react@19.0.0_react-dom@19.0.0__react@19.0.0_vite@6.0.11",
     "npm:@astrojs/tailwind@^5.1.5": "5.1.5_astro@5.1.9__typescript@5.7.3__vite@6.0.11__zod@3.24.1_tailwindcss@3.4.17__postcss@8.5.1_postcss@8.5.1_typescript@5.7.3",
-    "npm:@tailwindcss/typography@~0.5.16": "0.5.16_tailwindcss@4.0.0",
+    "npm:@tailwindcss/typography@~0.5.16": "0.5.16_tailwindcss@3.4.17__postcss@8.5.1",
     "npm:@types/p5@^1.7.6": "1.7.6",
     "npm:@types/react-dom@^19.0.3": "19.0.3_@types+react@19.0.8",
     "npm:@types/react@^19.0.8": "19.0.8",
@@ -16,7 +16,8 @@
     "npm:react@19": "19.0.0",
     "npm:rehype-katex@^7.0.1": "7.0.1",
     "npm:remark-math@6": "6.0.0",
-    "npm:tailwindcss@4": "4.0.0",
+    "npm:sharp@~0.33.5": "0.33.5",
+    "npm:tailwindcss@^3.4.17": "3.4.17_postcss@8.5.1",
     "npm:typescript@^5.7.3": "5.7.3"
   },
   "npm": {
@@ -118,7 +119,7 @@
         "autoprefixer",
         "postcss",
         "postcss-load-config",
-        "tailwindcss@3.4.17_postcss@8.5.1"
+        "tailwindcss"
       ]
     },
     "@astrojs/telemetry@3.2.0": {
@@ -645,14 +646,14 @@
     "@shikijs/vscode-textmate@10.0.1": {
       "integrity": "sha512-fTIQwLF+Qhuws31iw7Ncl1R3HUDtGwIipiJ9iU+UsDUwMhegFcQKQHd51nZjb7CArq0MvON8rbgCGQYWHUKAdg=="
     },
-    "@tailwindcss/typography@0.5.16_tailwindcss@4.0.0": {
+    "@tailwindcss/typography@0.5.16_tailwindcss@3.4.17__postcss@8.5.1": {
       "integrity": "sha512-0wDLwCVF5V3x3b1SGXPCDcdsbDHMBe+lkFzBRaHeLvNi+nrrnZ1lA18u+OTWO8iSWU2GxUOCvlXtDuqftc1oiA==",
       "dependencies": [
         "lodash.castarray",
         "lodash.isplainobject",
         "lodash.merge",
         "postcss-selector-parser@6.0.10",
-        "tailwindcss@4.0.0"
+        "tailwindcss"
       ]
     },
     "@types/babel__core@7.20.5": {
@@ -2782,9 +2783,6 @@
         "sucrase"
       ]
     },
-    "tailwindcss@4.0.0": {
-      "integrity": "sha512-ULRPI3A+e39T7pSaf1xoi58AqqJxVCLg8F/uM5A3FadUbnyDTgltVnXJvdkTjwCOGA6NazqHVcwPJC5h2vRYVQ=="
-    },
     "thenify-all@1.6.0": {
       "integrity": "sha512-RNxQH/qI8/t3thXJDwcstUO4zeqo64+Uy/+sNVRBx4Xn2OX+OZ9oP+iJnNFqplFra2ZUVeKCSa2oVWi3T4uVmA==",
       "dependencies": [
@@ -3271,7 +3269,8 @@
         "npm:react@19",
         "npm:rehype-katex@^7.0.1",
         "npm:remark-math@6",
-        "npm:tailwindcss@4",
+        "npm:sharp@~0.33.5",
+        "npm:tailwindcss@^3.4.17",
         "npm:typescript@^5.7.3"
       ]
     }
