@@ -20,7 +20,7 @@ const Heading = post.filePath?.match(/([^/]+)(?=\.[^/.]+$)/)?.[0];
 
 <Layout theme="black">
     <NotesLayout>
-        <h1 class="text-6xl font-bold">{Heading}</h1>
+        <h1 class="text-6xl text-red-600 font-bold">{Heading}</h1>
         <Content />
     </NotesLayout>
 </Layout>
