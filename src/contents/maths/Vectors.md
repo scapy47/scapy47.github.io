@@ -1,5 +1,5 @@
 # What is Vectors?
-**vectors are why to describe motion with math** they exist in **Euclidean space**. euclidean space is mathematical concept that describes geometric space intended to represent [physical space](https://en.wikipedia.org/wiki/Physical_space "Physical space"). euclidean space can have **n**-spaces where **"n"** can be any positive integer.
+**vectors are why to describe motion with maths** they exist in **Euclidean space**. euclidean space is mathematical concept that describes geometric space intended to represent [physical space](https://en.wikipedia.org/wiki/Physical_space "Physical space"). euclidean space can have **n**-spaces where **"n"** can be any positive integer.
 
 # Difference between vector and points  
 {/* plain where user will define a point based on input x and y */}
