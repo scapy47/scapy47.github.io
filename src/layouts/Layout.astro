@@ -1,5 +1,6 @@
 ---
 import Posthog from "@/components/posthog.astro";
+import "@/styles/global.css"
 
 interface Props {
 	title?: string;
@@ -26,25 +27,3 @@ const { title, theme, className } = Astro.props;
 		<slot />
 	</body>
 </html>
-<style is:global>
-	@tailwind base;
-	@tailwind components;
-	@tailwind utilities;
-
-	@layer base {
-		:root {
-			--color-pri: #cc0033;
-			--color-sec: #990033;
-			--color-ter: #660033;
-		}
-		html,
-		body {
-			@apply h-full w-full m-0 p-0;
-		}
-	}
-	@layer utilities {
-		.wmode-vlr {
-			writing-mode: vertical-lr;
-		}
-	}
-</style>

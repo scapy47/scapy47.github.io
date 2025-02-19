@@ -2,16 +2,13 @@
 import { defineConfig } from 'astro/config';
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
-
-import tailwind from '@astrojs/tailwind';
-
+import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://Scapy47.github.io',
   integrations: [
-    tailwind(),
     react({
       experimentalReactChildren: true,
     })
@@ -19,5 +16,8 @@ export default defineConfig({
   markdown: {
     rehypePlugins: [rehypeKatex],
     remarkPlugins: [remarkMath]
-  }
+  },
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
