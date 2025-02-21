@@ -1,6 +1,6 @@
 ---
 import Posthog from "@/components/posthog.astro";
-import "@/styles/global.css"
+import "@/styles/global.css";
 
 interface Props {
 	title?: string;
@@ -23,7 +23,7 @@ const { title, theme, className } = Astro.props;
 		<Posthog />
 		<title>{title}</title>
 	</head>
-	<body class={className + " " + "dark:bg-black dark:text-white"}>
+	<body class={className}>
 		<slot />
 	</body>
 </html>

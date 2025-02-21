@@ -1,16 +1,14 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
-@layer base {
-    :root {
-        --color-pri: #cc0033;
-        --color-sec: #990033;
-        --color-ter: #660033;
-    }
+@theme {
+    --color-crimsom-red: #DC143C;
+}
 
+@layer base {
     html,
     body {
-        @apply h-full w-full m-0 p-0;
+        @apply dark:bg-black dark:text-white h-full w-full m-0 p-0;
     }
 }
 

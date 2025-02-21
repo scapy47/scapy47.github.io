@@ -9,17 +9,29 @@ import Hacktxt from "@/components/ui/Hacktxt";
 	<nav
 		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
 	>
-		<li class="p-4 hover:bg-[var(--color-sec)]">
-			<a href=""><Hacktxt className="p-4" text="hello" client:idle /></a>
+		<li class="p-4">
+			<a href="">
+				<Hacktxt text="hello" className="p-4" client:idle />
+			</a>
 		</li>
-		<li class="p-4 hover:bg-[var(--color-sec)]">
-			<a href=""><Hacktxt className="p-4" text="where" client:idle /></a>
+		<li class="p-4">
+			<a href="">
+				<Hacktxt text="where" className="p-4" client:idle />
+			</a>
 		</li>
-		<li class="p-4 hover:bg-[var(--color-sec)]">
-			<a href=""><Hacktxt className="p-4" text="what" client:idle /></a>
+		<li class="p-4">
+			<a href="">
+				<Hacktxt text="what" className="p-4" client:idle />
+			</a>
 		</li>
-		<li class="p-4 hover:bg-[var(--color-sec)]">
-			<a href=""><Hacktxt className="p-4" text="who" client:idle /></a>
+		<li class="p-4">
+			<a href="/notes/">
+				<Hacktxt
+					text="notes"
+					className="mochiy-pop-one-regular hover:text-crimsom-red"
+					client:idle
+				/>
+			</a>
 		</li>
 	</nav>
 	<main class="">
@@ -28,9 +40,9 @@ import Hacktxt from "@/components/ui/Hacktxt";
 		>
 			<!-- TODO: card dimension should be static on px or any static unit -->
 			<div
-				class="bg-black border-[var(--color-sec)] border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%]"
+				class="bg-black border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%]"
 			>
-				<p>
+				<p class="mochiy-pop-one-regular">
 					Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 					Animi, minus ullam alias ex facilis voluptatibus fugiat rem
 					tempora. Dicta sed laborum ex distinctio nobis in error,
@@ -43,13 +55,22 @@ import Hacktxt from "@/components/ui/Hacktxt";
 			/>
 		</section>
 	</main>
-	<style>
-		:root {
-			color-scheme: dark;
-		}
-		.perspective-a {
-			transform-style: preserve-3d;
-			transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
-		}
-	</style>
 </Layout>
+<style>
+	@import url("https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap");
+
+	.mochiy-pop-one-regular {
+		font-family: "Mochiy Pop One", serif;
+		font-weight: 400;
+		font-style: normal;
+	}
+
+	:root {
+		color-scheme: dark;
+	}
+
+	.perspective-a {
+		transform-style: preserve-3d;
+		transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
+	}
+</style>
