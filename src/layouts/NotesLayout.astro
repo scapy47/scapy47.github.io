@@ -1,7 +1,12 @@
 ---
+
 ---
+
 <!-- Get the latest one from: https://katex.org/docs/browser -->
-<link href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" rel="stylesheet">
+<link
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    rel="stylesheet"
+/>
 <main class="ml-auto mr-auto max-w-2xl p-6">
     <article
         class="prose dark:prose-invert prose-red prose-strong:text-red-600"
@@ -9,3 +14,14 @@
         <slot />
     </article>
 </main>
+<style is:inline>
+    iframe {
+        max-width: 100%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        border-radius: 1rem;
+        border-color: cyan;
+        border-width: 0.05rem;
+    }
+</style>
