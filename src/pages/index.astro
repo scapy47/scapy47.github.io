@@ -8,7 +8,7 @@ import Hacktxt from "@/components/ui/Hacktxt";
 
 <Layout title="Hello there" theme="black">
 	<nav
-		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wmode-vlr"
+		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wMode-vlr"
 	>
 		<li class="p-4">
 			<a href="" class="p-4">hello</a>
@@ -30,7 +30,7 @@ import Hacktxt from "@/components/ui/Hacktxt";
 		>
 			<!-- TODO: card dimension should be static on px or any static unit -->
 			<div
-				class="bg-black border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%]"
+				class="bg-black border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%] z-20"
 			>
 				<p class="mochiy-pop-one-regular">
 					<Hacktxt
@@ -43,8 +43,40 @@ import Hacktxt from "@/components/ui/Hacktxt";
 			<Image
 				src={heroImage}
 				alt=""
-				class="w-full h-full pointer-events-none center bg-center bg-no-repeat relative z-10 object-cover object-left-top"
+				class="w-full h-full pointer-events-none center bg-center bg-no-repeat relative z-50 object-cover object-left-top"
 			/>
+			<div class="w-full flex justify-evenly absolute top-0 z-10">
+				<Hacktxt
+					className="textO-upright wMode-vlr"
+					client:idle
+					text="システム起動中..."
+				/>
+				<Hacktxt
+					className="textO-upright wMode-vlr"
+					client:idle
+					text="コネクテッド・トゥ・ワイアード..."
+				/>
+				<Hacktxt
+					className="textO-upright wMode-vlr block"
+					client:idle
+					text="システム同期中..."
+				/>
+				<Hacktxt
+					className="textO-upright wMode-vlr block"
+					client:idle
+					text="プロトコル認証「成功」"
+				/>
+				<Hacktxt
+					className="textO-upright wMode-vlr block"
+					client:idle
+					text="データストリーム接続確立"
+				/>
+				<Hacktxt
+					className="textO-upright wMode-vlr block"
+					client:idle
+					text="ユーザーID 「スキャピー47」"
+				/>
+			</div>
 		</section>
 	</main>
 </Layout>

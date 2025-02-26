@@ -6,6 +6,7 @@
 }
 
 @layer base {
+
     html,
     body {
         @apply dark:bg-black dark:text-white h-full w-full m-0 p-0;
@@ -13,7 +14,11 @@
 }
 
 @layer utilities {
-    .wmode-vlr {
+    .wMode-vlr {
         writing-mode: vertical-lr;
+    }
+
+    .textO-upright {
+        text-orientation: upright;
     }
 }
