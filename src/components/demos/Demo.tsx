@@ -1,8 +1,8 @@
 import type p5 from "p5";
 import { useEffect, useRef } from "react";
 
-interface prop {
-    sketch: (p5: p5) => void;
+type prop = {
+    sketch: () => void;
     className?: string,
     id?: string,
 }
