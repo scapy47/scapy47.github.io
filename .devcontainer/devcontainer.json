@@ -11,10 +11,5 @@
     "ghcr.io/devcontainers/features/sshd:1": {
       "version": "latest"
     }
-  },
-  "containerEnv": {
-    "EDITOR": "nvim",
-    "PATH": "/home/nvimuser/.deno/bin:/home/nvimuser/.local/bin:$PATH"
-  },
-  "runArgs": ["--init"]
+  }
 }
