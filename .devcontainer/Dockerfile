@@ -37,9 +37,6 @@ RUN curl -fsSL https://deno.land/x/install/install.sh | sh
 # Install Python dependencies for Manim
 RUN pip3 install --no-cache-dir manim
 
-# Install Node.js global packages (e.g., TypeScript)
-RUN npm install -g typescript
-
 # Create a non-root user
 ARG USERNAME=nvimuser
 ARG USER_UID=1000
