@@ -1,5 +1,5 @@
 # Start from a Fedora base image
-FROM fedora:letest
+FROM fedora:latest
 
 # Avoid prompts during package installation
 ENV DEBIAN_FRONTEND=noninteractive
