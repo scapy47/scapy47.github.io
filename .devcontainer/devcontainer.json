@@ -1,15 +1,7 @@
 {
   "name": "Fedora Neovim Dev Container",
   "build": {
-    "dockerfile": "Dockerfile",
-    "context": "."
+    "dockerfile": "Dockerfile"
   },
-  "postCreateCommand": "chmod +x .devcontainer/post-create.sh && bash .devcontainer/post-create.sh",
-  "remoteUser": "nvimuser",
-  "features": {
-    "ghcr.io/devcontainers/features/common:1": {},
-    "ghcr.io/devcontainers/features/sshd:1": {
-      "version": "latest"
-    }
-  }
+  "postCreateCommand": "chmod +x .devcontainer/post-create.sh && bash .devcontainer/post-create.sh"
 }
