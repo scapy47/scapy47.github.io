@@ -1,14 +1,13 @@
 #!/bin/bash
 
-# Clone your Neovim configuration
-git clone https://github.com/Scapy47/nvim-config.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim && nvim --headless
+sudo apt update && sudo apt upgrade
 
+sudo apt install -y 
+         \ clang
+         \ neovim
 
-# Verify installations
-node --version
-deno --version
-python3 --version
+curl -LsSf https://astral.sh/uv/install.sh | sh
+sudo apt install build-essential python3-dev libcairo2-dev libpango1.0-dev texlive-full
 manim --version
-nvim --version
 
-echo "Neovim Dev Container setup complete!"
+curl -fsSL https://deno.land/install.sh | sh
