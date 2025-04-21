@@ -38,6 +38,8 @@ RUN ssh-keygen -A \
     && echo "PasswordAuthentication no" >> /etc/ssh/sshd_config \
     && echo "PermitRootLogin prohibit-password" >> /etc/ssh/sshd_config \
     && echo "UsePAM yes" >> /etc/ssh/sshd_config
+RUN systemctl enable sshd \ 
+    && systemctl start sshd
 
 USER $USERNAME
 ENV HOME=/home/$USERNAME
