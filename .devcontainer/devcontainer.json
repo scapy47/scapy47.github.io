@@ -1,5 +1,5 @@
 {
-  "name": "Fedora Neovim Dev Container",
+  "name": "Neovim Dev Container",
   "build": {
     "dockerfile": "Dockerfile"
   },
