@@ -11,12 +11,10 @@ RUN apt update
 RUN apt upgrade -y
 RUN apt install -y
         \ clang
-        \ python-dev
-        \ uv
-        \ pkg-config 
-        \ cairo-devel 
-        \ pango-devel
-        \ texlive-scheme-full
+        \ python3-dev
+        \ libcairo2-dev
+        \ libpango1.0-dev
+        \ texlive-full
         \ nodejs
         \ neovim
         \ openssh
@@ -34,4 +32,5 @@ USER $USERNAME
 ENV HOME=/home/$USERNAME
 
 RUN curl -fsSL https://deno.land/install.sh | sh
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 CMD [ "/bin/bash" ]
