@@ -4,6 +4,10 @@
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
         "version": "latest"
+    },
+    "homebrew": {
+        "version": "latest",
+        "shallow": false
     }
   },
   "customizations": {}
