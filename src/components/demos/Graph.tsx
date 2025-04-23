@@ -1,4 +1,6 @@
+/*
 import Demo from "./Demo";
+import "p5"
 
 
 export default function Graph() {
@@ -56,3 +58,4 @@ export default function Graph() {
 
     return <Demo id="p5-container" sketch={GraphSketch} className="w-full" />
 }
+*/
