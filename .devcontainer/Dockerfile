@@ -1,4 +1,4 @@
-
+FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 
 
 RUN sudo apt update && sudo apt upgrade -y
