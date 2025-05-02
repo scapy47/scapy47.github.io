@@ -1,5 +1,8 @@
 {
   "name": "Neovim Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "postCreateCommand": "chmod +x .devcontainer/post-create.sh && bash .devcontainer/post-create.sh",
   "features": {
     "ghcr.io/devcontainers/features/sshd:1": {
