@@ -1,6 +1,8 @@
 # Dockerfile
 FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu
 
+USER root
+
 # Install essential packages
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -29,6 +31,10 @@ RUN brew install \
     deno \
     nodejs \
     uv
+
+RUN chown -R vscode:vscode /home/linuxbrew/.linuxbrew
+
+USER vscode
 
 # Configure Neovim
 RUN git clone https://github.com/Scapy47/nvim.config.git \  
