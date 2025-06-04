@@ -23,7 +23,7 @@ jobs:
         uses: denoland/setup-deno@v2
       
       - name: Install dependencies
-        run: deno run -A npm:install
+        run: deno install --allow-scripts
       
       - name: Build Astro project with Deno
         run:  deno task build
