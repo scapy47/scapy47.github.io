@@ -6,4 +6,8 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "manim>=0.19.0",
+    "taskipy>=1.14.1",
 ]
+
+[tool.taskipy.tasks]
+compile-all = "for file in *.py; do manim $file --all; done"

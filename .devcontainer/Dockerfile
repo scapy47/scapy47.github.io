@@ -15,6 +15,7 @@ RUN apt-get update \
     libcairo2-dev \
     libpango1.0-dev \
     texlive-base \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Homebrew non-interactively
