@@ -10,4 +10,4 @@ dependencies = [
 ]
 
 [tool.taskipy.tasks]
-compile-all = "for file in *.py; do manim $file --all; done"
+compile = "manim render -qh"
