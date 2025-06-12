@@ -30,9 +30,9 @@ import Hacktxt from "@/components/ui/Hacktxt";
 		>
 			<!-- TODO: card dimension should be static on px or any static unit -->
 			<div
-				class="bg-black border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 h-2/5 m-0 top-[25%] left-[40%] z-20"
+				class="bg-[rgba(0,255,255,0.1)] backdrop-blur-sm border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 aspect-[4/3] m-0 top-[25%] left-[40%] z-20"
 			>
-				<p class="mochiy-pop-one-regular">
+				<p class="dotgothic16-regular">
 					<Hacktxt
 						className=""
 						client:idle
@@ -40,8 +40,7 @@ import Hacktxt from "@/components/ui/Hacktxt";
 					/>
 				</p>
 			</div>
-			<Image
-				src={heroImage}
+			<Image src={heroImage}
 				quality={"max"}
 				width={heroImage.width}
 				height={heroImage.height}
