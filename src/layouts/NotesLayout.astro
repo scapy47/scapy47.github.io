@@ -13,41 +13,27 @@
     </article>
 </main>
 <style>
-    @media (prefers-color-scheme: dark) {
-        .dotted-grid {
-            background-image: radial-gradient(
-                    circle at center,
-                    hsla(348 83% 47% / 0.6) 0.12rem,
-                    transparent 0
-                ),
-                radial-gradient(
-                    circle at center,
-                    hsla(0 0% 100% / 0.6) 0.05rem,
-                    transparent 0
-                );
-            background-size: 2rem 2rem;
-            background-position:
-                0 0,
-                1rem 1rem;
-        }
+    :root {
+        --color: if(
+            media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ; else:
+                hsla(0 0% 0% / 0.6)
+        );
     }
-    @media (prefers-color-scheme: light) {
-        .dotted-grid {
-            background-image: radial-gradient(
-                    circle at center,
-                    hsla(348 83% 47% / 0.6) 0.12rem,
-                    transparent 0
-                ),
-                radial-gradient(
-                    circle at center,
-                    hsla(0 0% 0% / 0.6) 0.05rem,
-                    transparent 0
-                );
-            background-size: 2rem 2rem;
-            background-position:
-                0 0,
-                1rem 1rem;
-        }
+    .dotted-grid {
+        background-image: radial-gradient(
+                circle at center,
+                hsla(348 83% 47% / 0.6) 0.12rem,
+                transparent 0
+            ),
+            radial-gradient(
+                circle at center,
+                var(--color) 0.05rem,
+                transparent 0
+            );
+        background-size: 2rem 2rem;
+        background-position:
+            0 0,
+            1rem 1rem;
     }
 </style>
 <style is:inline>
