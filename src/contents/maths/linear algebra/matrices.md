@@ -7,8 +7,8 @@
 #### Order of matrices
 $$
 \begin{bmatrix}
-1 & 2 & 3\\
-2 & n.. & n..\\
+1 & 2 & 3      \\
+2 & n.. & n..  \\
 3 & n.. & n..
 \end{bmatrix} = ""3*3=9\space Matrix""
 $$
@@ -42,7 +42,7 @@ $$
 
 $$
 \begin{bmatrix}
-1 & 2 & 3 & 4 & 5 & 6            \\
+1 & 2   & 3   & 4   & 5   & 6    \\
 2 & n.. & n.. & n.. & n.. & n..  \\
 3 & n.. & n.. & n.. & n.. & n..  \\
 4 & n.. & n.. & n.. & n.. & n..  \\
@@ -51,3 +51,61 @@ $$
 \end{bmatrix}
 $$
 
+>  Diagonal
+
+$$
+\begin{bmatrix}
+1 & 0 & 0 & 0 & 0 & 0  \\
+0 & 2 & 0 & 0 & 0 & 0  \\
+0 & 0 & 3 & 0 & 0 & 0  \\
+0 & 0 & 0 & 4 & 0 & 0  \\
+0 & 0 & 0 & 0 & 5 & 0  \\
+0 & 0 & 0 & 0 & 0 & 6  \\
+\end{bmatrix}
+$$
+
+***In this type of Matrix everything accept diagonal values are zero***
+
+> Scalar Matrix
+
+$$
+\begin{bmatrix}
+5 & 0 & 0 & 0 & 0 & 0  \\
+0 & 5 & 0 & 0 & 0 & 0  \\
+0 & 0 & 5 & 0 & 0 & 0  \\
+0 & 0 & 0 & 5 & 0 & 0  \\
+0 & 0 & 0 & 0 & 5 & 0  \\
+0 & 0 & 0 & 0 & 0 & 5  \\
+\end{bmatrix}
+$$
+
+***Diagonal Matrix with every diagonal value being same***
+
+> 🌟🌟 Identify Matrix 🌟🌟
+
+$$
+\begin{bmatrix}
+1 & 0 	\\
+0 & 1 	\\
+\end{bmatrix}
+\Huge , \small
+\begin{bmatrix}
+1 & 0 & 0	\\
+0 & 1 & 0	\\
+0 & 0 & 1
+\end{bmatrix}  
+$$
+
+***Diagonal Matrix with every diagonal value being 1***
+
+**Identify Matrix has used in Transformations it's basics building block in many mathematical systems**
+
+> Zero
+
+$$
+\begin{bmatrix}
+0 & 0 & 0	\\
+0 & 0 & 0	\\
+0 & 0 & 0
+\end{bmatrix} 
+$$
