@@ -9,5 +9,6 @@
       "version": "latest"
     }
   },
-  "customizations": {}
+  "customizations": {},
+  "forwardPort": [4321]
 }
