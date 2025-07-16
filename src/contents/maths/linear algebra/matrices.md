@@ -96,9 +96,8 @@ $$
 \end{bmatrix}  
 $$
 
-***Diagonal Matrix with every diagonal value being 1***
-
-**Identify Matrix has used in Transformations it's basics building block in many mathematical systems**
+***Scalar Matrix with every diagonal value being 1***
+**Identify Matrix has use in Transformations it's basics building block in many mathematical systems**
 
 > Zero
 
