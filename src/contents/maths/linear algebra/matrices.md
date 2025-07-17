@@ -14,9 +14,14 @@ $$
 1 & 2 & 3      \\
 2 & n.. & n..  \\
 3 & n.. & n..
-\end{bmatrix} = ""3*3=9\space Matrix""
+\end{bmatrix}
 $$
+$$
+3 \times 3=9 \text{ order matrix}
+$$
+
 $$\Large m\times n$$
+
 
 > where $$m$$ is number of **rows** and $$n$$ is number of **columns**
 
