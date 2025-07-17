@@ -1,6 +1,10 @@
 # What is matrices?
 ## what is linear transformations
 
+## Operations on Matrices
+#### Addition / subtraction
+#### Multiplication (scalar)
+#### Multiplication
 
 ## More information about matrices
 
@@ -12,9 +16,23 @@ $$
 3 & n.. & n..
 \end{bmatrix} = ""3*3=9\space Matrix""
 $$
-$$\Huge m\times n$$
+$$\Large m\times n$$
 
-> where **$$\Huge m$$** is number of **rows** and **$$\Huge n$$** is number of **columns**
+> where $$m$$ is number of **rows** and $$n$$ is number of **columns**
+
+> Two matrices are considered equal if both have same order and there components are same
+
+$$
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix} =
+\begin{bmatrix}
+1 & 2 \\
+3 & 4
+\end{bmatrix}
+$$
+
 #### Types of matrices
 
 > Column
@@ -108,3 +126,6 @@ $$
 0 & 0 & 0
 \end{bmatrix} 
 $$
+
+# Additional resources 
+![[https://youtu.be/HgQzOmnBGCo]]
