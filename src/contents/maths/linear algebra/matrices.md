@@ -16,6 +16,7 @@ $$
 3 & n.. & n..
 \end{bmatrix}
 $$
+
 $$
 3 \times 3=9 \text{ order matrix}
 $$
