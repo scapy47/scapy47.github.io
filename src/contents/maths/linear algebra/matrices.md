@@ -18,11 +18,8 @@ $$
 $$
 
 $$
-3 \times 3=9 \text{ order matrix}
+\Large m \times n=9 \text{ order matrix}
 $$
-
-$$\Large m\times n$$
-
 
 > where $$m$$ is number of **rows** and $$n$$ is number of **columns**
 
