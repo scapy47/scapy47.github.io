@@ -7,7 +7,7 @@
     rel="stylesheet"
 />
 <main class="ml-auto mr-auto max-w-2xl p-6">
-    <article class="prose prose-invert prose-red prose-strong:text-red-600">
+    <article class="prose prose-invert prose-red prose-strong:text-red-600 pointGridMatrix">
         <slot />
     </article>
 </main>
@@ -18,8 +18,7 @@
                 hsla(0 0% 0% / 0.6)
         );
     }
-    body {
-        height: 100%;
+    .pointGridMatrix {
         background-image: radial-gradient(
                 circle at center,
                 hsla(348 83% 47% / 0.6) 0.05rem,
