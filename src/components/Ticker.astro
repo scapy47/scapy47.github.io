@@ -2,39 +2,16 @@
 const {} = Astro.props;
 ---
 
-<!-- interface props {
-    className?: string,
-    children: string,
-    angle?: number,
-    style?: React.CSSProperties
-}
-
-const Strip = ({ children, angle, className, style }: props) => {
-
-    if (angle && angle >= 360) angle = 360;
-
-
-    return <div className={className} style={style}>{children}</div>
-}
-export default Strip -->
 <div class="">
     <div class="ticker">
         <slot />
     </div>
+    <script>
+    const el =  document.querySelector(".ticker");
+
+    const observer = new IntersectionObserver(() => {
+    });
+    </script>
 </div>
 <style>
-    .ticker {
-        animation: ticker-scrolling 10s linear infinite;
-        white-space: nowrap;
-        display: flex;
-        width: max-content;
-    }
-    @keyframes ticker-scrolling {
-        from {
-            transform: translateX(0);
-        }
-        to {
-            transform: translateX(-50%);
-        }
-    }
 </style>
