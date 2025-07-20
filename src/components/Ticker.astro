@@ -8,8 +8,13 @@ const {} = Astro.props;
     </div>
     <script>
     const el =  document.querySelector(".ticker");
+    const children = el.children;
 
     const observer = new IntersectionObserver(() => {
+    },{});
+
+    children.forEach(child => {
+        observer.observe(child)
     });
     </script>
 </div>
