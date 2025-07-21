@@ -1,18 +1,22 @@
 ---
-const isDev = import.meta.env.PROD;
+import Layout from "@layouts/Layout.astro";
+import Ticker from "@components/Ticker.astro";
+const isProd = import.meta.env.PROD;
 ---
+
 <html>
   <head><title>Playground</title></head>
-  <body>
-    {isDev ? (
-      <>
+  {
+    isProd ? (
+      <body>
         <h1>Playground Page</h1>
         <p>This page is only accessible during development.</p>
-      </>
+      </body>
     ) : (
-      <>
-
-      </>
-    )}
-  </body>
+      <Layout>
+        <h1 class="text-6xl p-6">Demo page</h1>
+        <Ticker />
+      </Layout>
+    )
+  }
 </html>
