@@ -7,7 +7,7 @@ const {} = Astro.props;
         <slot />
     </div>
     <script>
-    const el =  document.querySelector(".ticker") || (()=>{throw new Error('null value')})();
+    const el =  document.querySelector(".ticker") ?? (()=>{throw new Error('null value')})();
 
     const children = el.children
 
