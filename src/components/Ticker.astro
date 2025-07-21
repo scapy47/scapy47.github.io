@@ -36,7 +36,7 @@ const {} = Astro.props;
     setInterval(() => {
         Left.style.marginLeft = `${val}px`;
         val++;
-    }, 1);
+    });
 
     const observer = new IntersectionObserver(() => {}, {});
 </script>
