@@ -7,15 +7,16 @@ const {} = Astro.props;
         <slot />
     </div>
     <script>
-    const el =  document.querySelector(".ticker");
-    const children = el && el.children;
+    const el =  document.querySelector(".ticker") || (()=>{throw new Error('null value')})();
+
+    const children = el.children
 
     const observer = new IntersectionObserver(() => {
     },{});
 
-    children.forEach(child => {
-        observer.observe(child)
-    });
+    for (let i = 0; i < children.length; i++) {
+        observer.observe(children[i])
+    };
     </script>
 </div>
 <style>
