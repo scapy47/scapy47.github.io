@@ -45,9 +45,9 @@ const duration = "4";
     for (let i = 0; i < items.length; i++) {
         const element = items[i] as HTMLElement;
 
-        const uniqueDelay = items.length / (i + 1);
+        const uniqueDelay = items.length - (i + 1);
 
         element.className = `${element.classList} scroll-side`;
-        element.style.animationDelay = `${relativeAnimationDuration * uniqueDelay * -1}`;
+        element.style.animationDelay = `${relativeAnimationDuration * uniqueDelay * -1}s`;
     }
 </script>
