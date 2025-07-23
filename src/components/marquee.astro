@@ -1,0 +1,53 @@
+---
+const {} = Astro.props;
+const duration = "4";
+---
+
+<div
+    data-duration={`${duration}s`}
+    id="marquee-0"
+    class="border-white border-2 box-content relative h-16 overflow-x-scroll"
+>
+    <div class="bg-red-600 w-24 h-16 mb-1 absolute left-[calc(100%_+_1rem)]">
+    </div>
+    <div class="bg-red-600 w-24 h-16 mb-1 absolute left-[calc(100%_+_1rem)]">
+    </div>
+    <div class="bg-red-600 w-24 h-16 mb-1 absolute left-[calc(100%_+_1rem)]">
+    </div>
+    <div class="bg-red-600 w-24 h-16 mb-1 absolute left-[calc(100%_+_1rem)]">
+    </div>
+</div>
+
+<style>
+    .scroll-side {
+        animation: scrollSide var(--duration) linear infinite;
+    }
+    @keyframes scrollSide {
+        100% {
+            left: calc(-100% + 1rem);
+        }
+    }
+</style>
+
+<script>
+    // add uuid and taget with uuid so that nothing will interference with each other 
+    const rootElement = document.getElementById("marquee-0") as HTMLDivElement;
+    const items = rootElement.children as HTMLCollection;
+
+    rootElement.style.setProperty(
+        "--duration",
+        rootElement.dataset.duration || "1s",
+    );
+
+    const duration = Number(rootElement.dataset.duration?.replace("s", ""));
+    const relativeAnimationDuration = duration / items.length;
+
+    for (let i = 0; i < items.length; i++) {
+        const element = items[i] as HTMLElement;
+
+        const uniqueDelay = items.length / (i + 1);
+
+        element.className = `${element.classList} scroll-side`;
+        element.style.animationDelay = `${relativeAnimationDuration * uniqueDelay * -1}`;
+    }
+</script>
