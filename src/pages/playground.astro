@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Ticker from "@components/Ticker.astro";
+import Marquee from "@components/marquee.astro";
 const isProd = import.meta.env.PROD;
 ---
 
@@ -15,7 +15,7 @@ const isProd = import.meta.env.PROD;
     ) : (
       <Layout>
         <h1 class="text-6xl p-6">Demo page</h1>
-        <Ticker />
+        <Marquee />
       </Layout>
     )
   }
