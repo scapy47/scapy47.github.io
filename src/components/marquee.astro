@@ -6,7 +6,7 @@ const duration = "4";
 <div
     data-duration={`${duration}s`}
     id="marquee-0"
-    class="border-white border-2 box-content relative h-16 overflow-x-scroll"
+    class="border-white border-2 box-content relative overflow-x-scroll overflow-y-visible"
 >
     <div class="bg-red-600 w-24 h-16 mb-1 absolute left-[calc(100%_+_1rem)]">
     </div>
@@ -30,9 +30,9 @@ const duration = "4";
 </style>
 
 <script>
-    // add uuid and taget with uuid so that nothing will interference with each other 
+    // add uuid and taget with uuid so that nothing will interference with each other
     const rootElement = document.getElementById("marquee-0") as HTMLDivElement;
-    const items = rootElement.children as HTMLCollection;
+    const items = rootElement.children as HTMLCollectionOf<HTMLElement>;
 
     rootElement.style.setProperty(
         "--duration",
@@ -42,12 +42,19 @@ const duration = "4";
     const duration = Number(rootElement.dataset.duration?.replace("s", ""));
     const relativeAnimationDuration = duration / items.length;
 
+    let rootHeight = 0;
     for (let i = 0; i < items.length; i++) {
-        const element = items[i] as HTMLElement;
+        const element = items[i];
 
-        const uniqueDelay = items.length - (i + 1);
+        rootHeight =
+            rootHeight < element.offsetHeight
+                ? element.offsetHeight
+                : rootHeight;
 
         element.className = `${element.classList} scroll-side`;
+
+        const uniqueDelay = items.length - (i + 1);
         element.style.animationDelay = `${relativeAnimationDuration * uniqueDelay * -1}s`;
     }
+    rootElement.style.height = `${rootHeight}px`;
 </script>
