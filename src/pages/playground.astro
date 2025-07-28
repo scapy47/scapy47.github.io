@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import Marquee from "@components/Marquee.astro";
+import Marquee from "@components/react/ui/Marquee";
 
 const isProd = import.meta.env.PROD;
 ---
@@ -16,8 +16,8 @@ const isProd = import.meta.env.PROD;
     ) : (
       <Layout>
         <h1 class="p-6 text-6xl">Demo page</h1>
-        <Marquee >
-          <div class="h-8 w-8 bg-red-300" />
+        <Marquee client:idle>
+          <div class="h-16 w-16 bg-red-700" />
         </Marquee>
       </Layout>
     )
