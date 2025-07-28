@@ -1,14 +1,19 @@
 # What is matrices?
+
 ## what is linear transformations
 
 ## Operations on Matrices
+
 #### Addition / subtraction
+
 #### Multiplication (scalar)
+
 #### Multiplication
 
 ## More information about matrices
 
 #### Order of matrices
+
 $$
 \begin{bmatrix}
 1 & 2 & 3      \\
@@ -72,7 +77,7 @@ $$
 \end{bmatrix}
 $$
 
->  Diagonal
+> Diagonal
 
 $$
 \begin{bmatrix}
@@ -85,7 +90,7 @@ $$
 \end{bmatrix}
 $$
 
-***In this type of Matrix everything accept diagonal values are zero***
+**_In this type of Matrix everything accept diagonal values are zero_**
 
 > Scalar Matrix
 
@@ -100,7 +105,7 @@ $$
 \end{bmatrix}
 $$
 
-***Diagonal Matrix with every diagonal value being same***
+**_Diagonal Matrix with every diagonal value being same_**
 
 > 🌟🌟 Identify Matrix 🌟🌟
 
@@ -114,10 +119,10 @@ $$
 1 & 0 & 0	\\
 0 & 1 & 0	\\
 0 & 0 & 1
-\end{bmatrix}  
+\end{bmatrix}
 $$
 
-***Scalar Matrix with every diagonal value being 1***
+**_Scalar Matrix with every diagonal value being 1_**
 **Identify Matrix has use in Transformations it's basics building block in many mathematical systems**
 
 > Zero
@@ -127,8 +132,9 @@ $$
 0 & 0 & 0	\\
 0 & 0 & 0	\\
 0 & 0 & 0
-\end{bmatrix} 
+\end{bmatrix}
 $$
 
-# Additional resources 
+# Additional resources
+
 ![[https://youtu.be/HgQzOmnBGCo]]

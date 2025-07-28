@@ -4,11 +4,11 @@ import NotesLayout from "@layouts/NotesLayout.astro";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
-    const posts = await getCollection("notes");
-    return posts.map((post) => ({
-        params: { slug: post.id },
-        props: { post },
-    }));
+  const posts = await getCollection("notes");
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
 }
 
 import Layout from "@/layouts/Layout.astro";
@@ -19,12 +19,12 @@ const Heading = post.filePath?.match(/([^/]+)(?=\.[^/.]+$)/)?.[0];
 ---
 
 <Layout theme="black" className="bg-black">
-    <NotesLayout>
-        <h1
-            class="text-[3.4rem] text-[#DC143C] [text-shadow:0_0_0.5rem_red,0_0_16px_#DC143C] [-webkit-text-stroke:0.1_white] font-bold"
-        >
-            {Heading}
-        </h1>
-        <Content />
-    </NotesLayout>
+  <NotesLayout>
+    <h1
+      class="text-[3.4rem] font-bold text-[#DC143C] [-webkit-text-stroke:0.1_white] [text-shadow:0_0_0.5rem_red,0_0_16px_#DC143C]"
+    >
+      {Heading}
+    </h1>
+    <Content />
+  </NotesLayout>
 </Layout>

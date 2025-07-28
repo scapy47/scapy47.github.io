@@ -1,7 +1,3 @@
 export default function Window({}) {
-  return (
-    <div className={``}>
-
-    </div>
-  )
+  return <div className={``}></div>;
 }

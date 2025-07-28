@@ -3,43 +3,40 @@
 ---
 
 <link
-    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
-    rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+  rel="stylesheet"
 />
-<main class="ml-auto mr-auto max-w-2xl p-6 pointGridMatrix">
-    <article class="prose prose-invert prose-red prose-strong:text-red-600">
-        <slot />
-    </article>
+<main class="pointGridMatrix mr-auto ml-auto max-w-2xl p-6">
+  <article class="prose prose-invert prose-red prose-strong:text-red-600">
+    <slot />
+  </article>
 </main>
 <style>
-    :root {
-        --color: if(
-            media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ; else:
-                hsla(0 0% 0% / 0.6)
-        );
-    }
-    .pointGridMatrix {
-        background-image: radial-gradient(
-                circle at center,
-                hsla(348 83% 47% / 0.6) 0.05rem,
-                transparent 0
-            ),
-            radial-gradient(
-                circle at center,
-                var(--color) 0.05rem,
-                transparent 0
-            );
-        background-size: 2rem 2rem;
-        background-position:
-            0 0,
-            1rem 1rem;
-    }
+  :root {
+    --color: if(
+      media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ;
+        else: hsla(0 0% 0% / 0.6)
+    );
+  }
+  .pointGridMatrix {
+    background-image:
+      radial-gradient(
+        circle at center,
+        hsla(348 83% 47% / 0.6) 0.05rem,
+        transparent 0
+      ),
+      radial-gradient(circle at center, var(--color) 0.05rem, transparent 0);
+    background-size: 2rem 2rem;
+    background-position:
+      0 0,
+      1rem 1rem;
+  }
 </style>
 <style is:inline>
-    iframe {
-        max-width: 100%;
-        overflow: hidden;
-        border-radius: 1rem;
-        border: 0.2rem dotted cyan;
-    }
+  iframe {
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 1rem;
+    border: 0.2rem dotted cyan;
+  }
 </style>

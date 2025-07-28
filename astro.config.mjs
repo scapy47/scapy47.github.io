@@ -10,7 +10,7 @@ export default defineConfig({
   site: "https://Scapy47.github.io",
   integrations: [
     react({
-      include: ['**/react/*'],
+      include: ["**/react/*"],
       experimentalReactChildren: true,
     }),
   ],

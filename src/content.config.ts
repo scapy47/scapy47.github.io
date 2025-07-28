@@ -5,10 +5,7 @@ import { glob } from "astro/loaders";
 export const collections = {
   notes: defineCollection({
     loader: glob({
-      pattern: [
-        "**/[^_]*.{md,mdx}",
-        "*.{md,mdx}",
-      ],
+      pattern: ["**/[^_]*.{md,mdx}", "*.{md,mdx}"],
       base: "./src/contents",
     }),
   }),

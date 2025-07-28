@@ -6,17 +6,19 @@ const posts = await getCollection("notes");
 const paths = posts.map((e) => e.id).sort();
 ---
 
-<Layout className="ml-auto mr-auto max-w-2xl p-6" theme="black">
-    <main class="m">
-        <h1 class="text-6xl">index</h1>
-        <ul>
-            {
-                paths.map((e) => (
-                    <li>
-                        <a class="text-red-600" href={e}>{e}</a>
-                    </li>
-                ))
-            }
-        </ul>
-    </main>
+<Layout className="mr-auto ml-auto max-w-2xl p-6" theme="black">
+  <main class="m">
+    <h1 class="text-6xl">index</h1>
+    <ul>
+      {
+        paths.map((e) => (
+          <li>
+            <a class="text-red-600" href={e}>
+              {e}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </main>
 </Layout>

@@ -6,101 +6,99 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
 ---
 
 <Layout title="Hello there" theme="black">
-	<nav
-		class="wMode-vlr fixed z-50 flex h-full list-none justify-around overflow-scroll font-extrabold uppercase backdrop-blur-3xl"
-	>
-		<li class="p-4">
-			<a href="/" class="p-4">hello</a>
-		</li>
-		<li class="p-4">
-			<a href="/" class="p-4">where</a>
-		</li>
-		<li class="p-4">
-			<a href="/" class="p-4">what</a>
-		</li>
-		<li class="p-4">
-			<a href="/notes/" class="hover:text-crimsom-red"
-				>notes</a
-			>
-		</li>
-	</nav>
-	<main class="">
-		<!-- <Ticker /> -->
-		<section
-			class="relative min-h-svh bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
-		>
-			<!-- TODO: card dimension should be static on px or any static unit -->
-			<div
-				class="border-crimsom-red perspective-a absolute top-[25%] left-[40%] z-20 m-0 aspect-[4/3] w-3/6 rounded-2xl border-2 bg-[rgba(0,255,255,0.1)] p-4 backdrop-blur-sm"
-			>
-				<p class="dotgothic16-regular">
-					<Hacktxt
-						className=""
-						client:idle
-						text="Lorem ipsum, dolor sit amet consectetur"
-					/>
-				</p>
-			</div>
-			<Image
-				src={heroImage}
-				quality={"max"}
-				width={heroImage.width}
-				height={heroImage.height}
-				alt="hello there"
-				class="center pointer-events-none relative z-50 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
-			/>
-			<div
-				class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly"
-			>
-				<Hacktxt
-					className="textO-upright wMode-vlr"
-					client:idle
-					text="システム起動中..."
-				/>
-				<Hacktxt
-					className="textO-upright wMode-vlr"
-					client:idle
-					text="コネクテッド・トゥ・ワイアード..."
-				/>
-				<Hacktxt
-					className="textO-upright wMode-vlr"
-					client:idle
-					text="システム同期中..."
-				/>
-				<Hacktxt
-					className="textO-upright wMode-vlr block"
-					client:idle
-					text="プロトコル認証「成功」"
-				/>
-				<Hacktxt
-					className="textO-upright wMode-vlr block"
-					client:idle
-					text="データストリーム接続確立"
-				/>
-				<Hacktxt
-					className="textO-upright wMode-vlr block"
-					client:idle
-					text="ユーザーID 「スキャピー47」"
-				/>
-			</div>
-		</section>
-	</main>
+  <nav
+    class="wMode-vlr fixed z-50 flex h-full list-none justify-around overflow-scroll font-extrabold uppercase backdrop-blur-3xl"
+  >
+    <li class="p-4">
+      <a href="/" class="p-4">hello</a>
+    </li>
+    <li class="p-4">
+      <a href="/" class="p-4">where</a>
+    </li>
+    <li class="p-4">
+      <a href="/" class="p-4">what</a>
+    </li>
+    <li class="p-4">
+      <a href="/notes/" class="hover:text-crimsom-red">notes</a>
+    </li>
+  </nav>
+  <main class="">
+    <!-- <Ticker /> -->
+    <section
+      class="relative min-h-svh bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
+    >
+      <!-- TODO: card dimension should be static on px or any static unit -->
+      <div
+        class="border-crimsom-red perspective-a absolute top-[25%] left-[40%] z-20 m-0 aspect-[4/3] w-3/6 rounded-2xl border-2 bg-[rgba(0,255,255,0.1)] p-4 backdrop-blur-sm"
+      >
+        <p class="dotgothic16-regular">
+          <Hacktxt
+            className=""
+            client:idle
+            text="Lorem ipsum, dolor sit amet consectetur"
+          />
+        </p>
+      </div>
+      <Image
+        src={heroImage}
+        quality={"max"}
+        width={heroImage.width}
+        height={heroImage.height}
+        alt="hello there"
+        class="center pointer-events-none relative z-50 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
+      />
+      <div
+        class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly"
+      >
+        <Hacktxt
+          className="textO-upright wMode-vlr"
+          client:idle
+          text="システム起動中..."
+        />
+        <Hacktxt
+          className="textO-upright wMode-vlr"
+          client:idle
+          text="コネクテッド・トゥ・ワイアード..."
+        />
+        <Hacktxt
+          className="textO-upright wMode-vlr"
+          client:idle
+          text="システム同期中..."
+        />
+        <Hacktxt
+          className="textO-upright wMode-vlr block"
+          client:idle
+          text="プロトコル認証「成功」"
+        />
+        <Hacktxt
+          className="textO-upright wMode-vlr block"
+          client:idle
+          text="データストリーム接続確立"
+        />
+        <Hacktxt
+          className="textO-upright wMode-vlr block"
+          client:idle
+          text="ユーザーID 「スキャピー47」"
+        />
+      </div>
+    </section>
+  </main>
 </Layout>
 <style>
-	@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
-	.dotgothic16-regular {
-		font-family: "DotGothic16", sans-serif;
-		font-weight: 400;
-		font-style: normal;
-	}
+  .dotgothic16-regular {
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
 
-	:root {
-		color-scheme: dark;
-	}
+  :root {
+    color-scheme: dark;
+  }
 
-	.perspective-a {
-		transform-style: preserve-3d;
-		transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
-	}
+  .perspective-a {
+    transform-style: preserve-3d;
+    transform: perspective(100vh) rotate3d(0, -1, 0, 40deg);
+  }
 </style>

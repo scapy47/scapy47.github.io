@@ -38,10 +38,13 @@ const Hacktxt = ({ text, className }: props) => {
     if (!intervalRef.current) {
       intervalRef.current = setInterval(() => {
         setTxt(
-          text.split("").map((char, index) => {
-            if (index < runCount.current) return char;
-            return charVec[Math.round(Math.random() * charVec.length)];
-          }).join(""),
+          text
+            .split("")
+            .map((char, index) => {
+              if (index < runCount.current) return char;
+              return charVec[Math.round(Math.random() * charVec.length)];
+            })
+            .join(""),
         );
 
         runCount.current += 1 / 3;

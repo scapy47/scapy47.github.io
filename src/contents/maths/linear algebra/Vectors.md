@@ -8,7 +8,7 @@ euclidean space can have **n**-spaces where **"n"** can be any positive integer.
 
 ## Difference between vector and points
 
-{/* plain where user will define a point based on input x and y */} **"Points
+{/_ plain where user will define a point based on input x and y _/} **"Points
 are used to describe locations in space"** and they are _dependent of there
 coordinate system_ means points form one coordinate system will have different
 **different coordinates** in other system.
