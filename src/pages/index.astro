@@ -3,12 +3,11 @@ import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/main.png";
 import Hacktxt from "@/components/react/ui/Hacktxt";
-// import Ticker from "@/components/Ticker.astro";
 ---
 
 <Layout title="Hello there" theme="black">
 	<nav
-		class="flex fixed justify-around overflow-scroll backdrop-blur-3xl h-full z-50 list-none font-extrabold uppercase wMode-vlr"
+		class="wMode-vlr fixed z-50 flex h-full list-none justify-around overflow-scroll font-extrabold uppercase backdrop-blur-3xl"
 	>
 		<li class="p-4">
 			<a href="/" class="p-4">hello</a>
@@ -20,17 +19,19 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
 			<a href="/" class="p-4">what</a>
 		</li>
 		<li class="p-4">
-			<a href="/notes/" class="hover:text-crimsom-red">notes</a>
+			<a href="/notes/" class="hover:text-crimsom-red"
+				>notes</a
+			>
 		</li>
 	</nav>
 	<main class="">
 		<!-- <Ticker /> -->
 		<section
-			class="relative bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)] min-h-svh"
+			class="relative min-h-svh bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
 		>
 			<!-- TODO: card dimension should be static on px or any static unit -->
 			<div
-				class="bg-[rgba(0,255,255,0.1)] backdrop-blur-sm border-crimsom-red border-2 rounded-2xl p-4 absolute perspective-a w-3/6 aspect-[4/3] m-0 top-[25%] left-[40%] z-20"
+				class="border-crimsom-red perspective-a absolute top-[25%] left-[40%] z-20 m-0 aspect-[4/3] w-3/6 rounded-2xl border-2 bg-[rgba(0,255,255,0.1)] p-4 backdrop-blur-sm"
 			>
 				<p class="dotgothic16-regular">
 					<Hacktxt
@@ -40,14 +41,17 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
 					/>
 				</p>
 			</div>
-			<Image src={heroImage}
+			<Image
+				src={heroImage}
 				quality={"max"}
 				width={heroImage.width}
 				height={heroImage.height}
 				alt="hello there"
-				class="w-full h-full pointer-events-none center bg-center bg-no-repeat relative z-50 object-cover object-left-top"
+				class="center pointer-events-none relative z-50 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
 			/>
-			<div class="w-full flex justify-evenly absolute top-0 z-10 dotgothic16-regular">
+			<div
+				class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly"
+			>
 				<Hacktxt
 					className="textO-upright wMode-vlr"
 					client:idle
@@ -83,12 +87,12 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
 	</main>
 </Layout>
 <style>
-	@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+	@import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
 
 	.dotgothic16-regular {
-	font-family: "DotGothic16", sans-serif;
-	font-weight: 400;
-	font-style: normal;
+		font-family: "DotGothic16", sans-serif;
+		font-weight: 400;
+		font-style: normal;
 	}
 
 	:root {

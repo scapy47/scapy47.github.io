@@ -29,5 +29,10 @@
     "tailwindcss": "^4.1.11",
     "tslib": "2.8.1",
     "typescript": "^5.7.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.6.2",
+    "prettier-plugin-astro": "^0.14.1",
+    "prettier-plugin-tailwindcss": "^0.6.14"
   }
 }

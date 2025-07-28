@@ -1,7 +1,7 @@
 {
   "version": "5",
   "specifiers": {
-    "npm:@astrojs/check@~0.9.4": "0.9.4_typescript@5.8.3",
+    "npm:@astrojs/check@~0.9.4": "0.9.4_typescript@5.8.3_prettier@3.6.2_prettier-plugin-astro@0.14.1",
     "npm:@astrojs/react@^4.3.0": "4.3.0_@types+react@19.1.8_@types+react-dom@19.1.6__@types+react@19.1.8_react@19.1.0_react-dom@19.1.0__react@19.1.0_vite@6.3.5__picomatch@4.0.2",
     "npm:@tailwindcss/typography@~0.5.16": "0.5.16_tailwindcss@4.1.11",
     "npm:@tailwindcss/vite@^4.1.11": "4.1.11_vite@6.3.5__picomatch@4.0.2",
@@ -11,6 +11,9 @@
     "npm:astro@5.11.0": "5.11.0_typescript@5.8.3_vite@6.3.5__picomatch@4.0.2_zod@3.25.75",
     "npm:chart.js@^4.5.0": "4.5.0",
     "npm:p5@^2.0.3": "2.0.3",
+    "npm:prettier-plugin-astro@~0.14.1": "0.14.1",
+    "npm:prettier-plugin-tailwindcss@~0.6.14": "0.6.14_prettier@3.6.2_prettier-plugin-astro@0.14.1",
+    "npm:prettier@^3.6.2": "3.6.2",
     "npm:react-compiler-runtime@^19.1.0-rc.2": "19.1.0-rc.2_react@19.1.0",
     "npm:react-dom@19": "19.1.0_react@19.1.0",
     "npm:react@19": "19.1.0",
@@ -32,7 +35,18 @@
     "@astrojs/check@0.9.4_typescript@5.8.3": {
       "integrity": "sha512-IOheHwCtpUfvogHHsvu0AbeRZEnjJg3MopdLddkJE70mULItS/Vh37BHcI00mcOJcH1vhD3odbpvWokpxam7xA==",
       "dependencies": [
-        "@astrojs/language-server",
+        "@astrojs/language-server@2.15.4_typescript@5.8.3_@volar+language-service@2.4.17",
+        "chokidar",
+        "kleur@4.1.5",
+        "typescript",
+        "yargs"
+      ],
+      "bin": true
+    },
+    "@astrojs/check@0.9.4_typescript@5.8.3_prettier@3.6.2_prettier-plugin-astro@0.14.1": {
+      "integrity": "sha512-IOheHwCtpUfvogHHsvu0AbeRZEnjJg3MopdLddkJE70mULItS/Vh37BHcI00mcOJcH1vhD3odbpvWokpxam7xA==",
+      "dependencies": [
+        "@astrojs/language-server@2.15.4_typescript@5.8.3_@volar+language-service@2.4.17_prettier@3.6.2_prettier-plugin-astro@0.14.1",
         "chokidar",
         "kleur@4.1.5",
         "typescript",
@@ -61,12 +75,42 @@
         "volar-service-css",
         "volar-service-emmet",
         "volar-service-html",
-        "volar-service-prettier",
+        "volar-service-prettier@0.0.62_@volar+language-service@2.4.17",
         "volar-service-typescript",
         "volar-service-typescript-twoslash-queries",
         "volar-service-yaml",
         "vscode-html-languageservice",
         "vscode-uri"
+      ],
+      "bin": true
+    },
+    "@astrojs/language-server@2.15.4_typescript@5.8.3_@volar+language-service@2.4.17_prettier@3.6.2_prettier-plugin-astro@0.14.1": {
+      "integrity": "sha512-JivzASqTPR2bao9BWsSc/woPHH7OGSGc9aMxXL4U6egVTqBycB3ZHdBJPuOCVtcGLrzdWTosAqVPz1BVoxE0+A==",
+      "dependencies": [
+        "@astrojs/compiler",
+        "@astrojs/yaml2ts",
+        "@jridgewell/sourcemap-codec",
+        "@volar/kit",
+        "@volar/language-core",
+        "@volar/language-server",
+        "@volar/language-service",
+        "fast-glob",
+        "muggle-string",
+        "prettier@3.6.2",
+        "prettier-plugin-astro",
+        "volar-service-css",
+        "volar-service-emmet",
+        "volar-service-html",
+        "volar-service-prettier@0.0.62_@volar+language-service@2.4.17_prettier@3.6.2",
+        "volar-service-typescript",
+        "volar-service-typescript-twoslash-queries",
+        "volar-service-yaml",
+        "vscode-html-languageservice",
+        "vscode-uri"
+      ],
+      "optionalPeers": [
+        "prettier@3.6.2",
+        "prettier-plugin-astro"
       ],
       "bin": true
     },
@@ -2737,8 +2781,30 @@
         "source-map-js"
       ]
     },
+    "prettier-plugin-astro@0.14.1": {
+      "integrity": "sha512-RiBETaaP9veVstE4vUwSIcdATj6dKmXljouXc/DDNwBSPTp8FRkLGDSGFClKsAFeeg+13SB0Z1JZvbD76bigJw==",
+      "dependencies": [
+        "@astrojs/compiler",
+        "prettier@3.6.2",
+        "sass-formatter"
+      ]
+    },
+    "prettier-plugin-tailwindcss@0.6.14_prettier@3.6.2_prettier-plugin-astro@0.14.1": {
+      "integrity": "sha512-pi2e/+ZygeIqntN+vC573BcW5Cve8zUB0SSAGxqpB4f96boZF4M3phPVoOFCeypwkpRYdi7+jQ5YJJUwrkGUAg==",
+      "dependencies": [
+        "prettier@3.6.2",
+        "prettier-plugin-astro"
+      ],
+      "optionalPeers": [
+        "prettier-plugin-astro"
+      ]
+    },
     "prettier@2.8.7": {
       "integrity": "sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==",
+      "bin": true
+    },
+    "prettier@3.6.2": {
+      "integrity": "sha512-I7AIg5boAr5R0FFtJ6rCfD+LFsWHp81dolrFD8S79U9tb8Az2nGrJncnMSnys+bpQJfRUzqs9hnA81OAA3hCuQ==",
       "bin": true
     },
     "prismjs@1.30.0": {
@@ -2988,6 +3054,15 @@
         "queue-microtask"
       ]
     },
+    "s.color@0.0.15": {
+      "integrity": "sha512-AUNrbEUHeKY8XsYr/DYpl+qk5+aM+DChopnWOPEzn8YKzOhv4l2zH6LzZms3tOZP3wwdOyc0RmTciyi46HLIuA=="
+    },
+    "sass-formatter@0.7.9": {
+      "integrity": "sha512-CWZ8XiSim+fJVG0cFLStwDvft1VI7uvXdCNJYXhDvowiv+DsbD1nXLiQ4zrE5UBvj5DWZJ93cwN0NX5PMsr1Pw==",
+      "dependencies": [
+        "suf-log"
+      ]
+    },
     "scheduler@0.26.0": {
       "integrity": "sha512-NlHwttCI/l5gCPR3D1nNXtWABUmBwvZpEQiD4IXSbIDq8BzLIK/7Ir5gTFSGZDUu37K5cMNp0hFtzO38sC7gWA=="
     },
@@ -3128,6 +3203,12 @@
       "integrity": "sha512-iq6eVVI64nQQTRYq2KtEg2d2uU7LElhTJwsH4YzIHZshxlgZms/wIc4VoDQTlG/IvVIrBKG06CrZnp0qv7hkcQ==",
       "dependencies": [
         "ansi-regex@6.1.0"
+      ]
+    },
+    "suf-log@2.5.3": {
+      "integrity": "sha512-KvC8OPjzdNOe+xQ4XWJV2whQA0aM1kGVczMQ8+dStAO6KfEB140JEVQ9dE76ONZ0/Ylf67ni4tILPJB41U0eow==",
+      "dependencies": [
+        "s.color"
       ]
     },
     "tailwindcss@4.1.11": {
@@ -3427,6 +3508,18 @@
         "@volar/language-service"
       ]
     },
+    "volar-service-prettier@0.0.62_@volar+language-service@2.4.17_prettier@3.6.2": {
+      "integrity": "sha512-h2yk1RqRTE+vkYZaI9KYuwpDfOQRrTEMvoHol0yW4GFKc75wWQRrb5n/5abDrzMPrkQbSip8JH2AXbvrRtYh4w==",
+      "dependencies": [
+        "@volar/language-service",
+        "prettier@3.6.2",
+        "vscode-uri"
+      ],
+      "optionalPeers": [
+        "@volar/language-service",
+        "prettier@3.6.2"
+      ]
+    },
     "volar-service-typescript-twoslash-queries@0.0.62_@volar+language-service@2.4.17": {
       "integrity": "sha512-KxFt4zydyJYYI0kFAcWPTh4u0Ha36TASPZkAnNY784GtgajerUqM80nX/W1d0wVhmcOFfAxkVsf/Ed+tiYU7ng==",
       "dependencies": [
@@ -3605,7 +3698,7 @@
         "yaml@2.2.2"
       ],
       "optionalDependencies": [
-        "prettier"
+        "prettier@2.8.7"
       ],
       "bin": true
     },
@@ -3676,6 +3769,9 @@
         "npm:astro@5.11.0",
         "npm:chart.js@^4.5.0",
         "npm:p5@^2.0.3",
+        "npm:prettier-plugin-astro@~0.14.1",
+        "npm:prettier-plugin-tailwindcss@~0.6.14",
+        "npm:prettier@^3.6.2",
         "npm:react-compiler-runtime@^19.1.0-rc.2",
         "npm:react-dom@19",
         "npm:react@19",
