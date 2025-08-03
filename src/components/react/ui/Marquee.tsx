@@ -1,38 +1,22 @@
-import type { ReactNode, CSSProperties } from "react"
-import { Children, cloneElement, isValidElement } from "react";
+import type { ReactNode, ReactElement } from "react"
+import { Children, cloneElement, isValidElement, useRef} from "react";
+import style from "@/styles/snippet.module.css"
 
 type Props = {
   children: ReactNode
 }
-const style: CSSProperties = {
-  animation: "scrollSide",
-  animationDuration: "10s",
-  animationTimingFunction: "linear",
-  animationIterationCount: "infinite"
-}
 export default ({ children }: Props) => {
 
+  const rootRef = useRef<HTMLDivElement>(null)
+
   return (
-    <div className="relative box-content overflow-x-scroll overflow-y-visible border-2 border-white">
-      <style>
-        {`
-          @keyframes scrollSide {
-            100% {
-              left: calc(-100% + 1rem);
-            }
-          }
-        `}
-      </style>
+    <div ref={rootRef} className="relative box-content overflow-x-scroll overflow-y-visible border-2 border-white">
       {
         Children.map(children, child => {
-          if (isValidElement(child)) {
-            return cloneElement(child, {
-              // @ts-ignore
-              style: {
-                ...style,
-                // @ts-ignore
-                ...child.props.style
-              }
+          if (isValidElement(child) && typeof child.props === "object" && child.props !== null) {
+            return cloneElement(child as ReactElement<{ className?: string }>, {
+              ...child.props,
+              className: `${(child.props as any).className || ''} ${style.scrollSide}`.trim()
             })
           }
         })
