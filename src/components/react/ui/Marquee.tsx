@@ -7,6 +7,9 @@ type Props = {
   duration?: number
 }
 
+/**
+ * @param duration - controls the speed and spacing elements in marquee.
+ */
 export default ({ children, duration = 10 }: Props) => {
 
   const rootRef = useRef<HTMLDivElement>(null)
