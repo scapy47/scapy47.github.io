@@ -4,23 +4,23 @@ import style from "@/styles/snippet.module.css"
 
 type Props = {
   children: ReactNode,
-  duration?: number
+  speed?: number
 }
 
 /**
- * @param duration - controls the speed and spacing elements in marquee.
+ * @param {number} speed - controls the speed of marquee.
  */
-export default ({ children, duration = 10 }: Props) => {
+export default ({ children, speed = 10 }: Props) => {
 
   const rootRef = useRef<HTMLDivElement>(null)
-  const relativeAnimationDuration = (duration / Children.count(children))
+  const relativeAnimationDuration = (speed / Children.count(children))
   let uniqueDelay = 0
 
   useEffect(() => {
     if (rootRef.current) {
-      rootRef.current.style.setProperty("--scrollSideDuration", `${duration}s`)
+      rootRef.current.style.setProperty("--scrollSideDuration", `${speed}s`)
     }
-  }, [duration])
+  }, [speed])
 
 
   return (
