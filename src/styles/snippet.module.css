@@ -7,5 +7,5 @@
 .scrollSide {
   position: relative;
   left: calc(100% + 1rem);
-  animation: scrollSide 1s linear infinite;
+  animation: scrollSide var(--scrollSideDuration) linear infinite;
 }
