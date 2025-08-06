@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import { Image } from "astro:assets";
 import heroImage from "@/assets/main.png";
 import Hacktxt from "@/components/react/ui/Hacktxt";
+import Marquee from "@/components/react/ui/Marquee";
 ---
 
 <Layout title="Hello there" theme="black">
@@ -25,7 +26,7 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
   <main class="">
     <!-- <Ticker /> -->
     <section
-      class="relative min-h-svh bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
+      class="relative h-svh overflow-y-hidden bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
     >
       <!-- TODO: card dimension should be static on px or any static unit -->
       <div
@@ -45,7 +46,7 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
         width={heroImage.width}
         height={heroImage.height}
         alt="hello there"
-        class="center pointer-events-none relative z-50 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
+        class="pointer-events-none relative z-30 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
       />
       <div
         class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly"
@@ -81,15 +82,37 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
           text="ユーザーID 「スキャピー47」"
         />
       </div>
+      <div
+        class="text-crimsom-red orbitron-regular absolute top-[12rem] left-[-15rem] w-svw -rotate-45 overflow-hidden border-2 border-orange-600 bg-black text-center text-8xl font-bold capitalize"
+      >
+        <Marquee client:idle speed={6}>
+          <span>k3rnel-pan1c.ksd</span>
+        </Marquee>
+      </div>
+      <div
+        class="text-crimsom-red orbitron-regular absolute bottom-[12rem] left-[-38rem] z-40 w-svw rotate-45 overflow-hidden border-2 border-orange-600 bg-black text-center text-8xl font-bold capitalize"
+      >
+        <Marquee client:idle speed={6}>
+          <span>k3rnel-pan1c.ksd</span>
+        </Marquee>
+      </div>
     </section>
   </main>
 </Layout>
 <style>
   @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap");
 
   .dotgothic16-regular {
     font-family: "DotGothic16", sans-serif;
     font-weight: 400;
+    font-style: normal;
+  }
+
+  .orbitron-regular {
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
     font-style: normal;
   }
 

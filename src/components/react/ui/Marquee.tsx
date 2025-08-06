@@ -24,7 +24,7 @@ export default ({ children, speed = 10 }: Props) => {
 
 
   return (
-    <div ref={rootRef} className="relative box-content overflow-x-hidden overflow-y-visible border-2 border-white flex">
+    <div ref={rootRef} className="relative overflow-x-hidden overflow-y-visible flex">
       {
         Children.map(children, (child, index) => {
 
