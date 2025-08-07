@@ -1,11 +1,1 @@
-@keyframes scrollSide {
-  100% {
-    left: calc(-100% + 1rem);
-  }
-}
 
-.scrollSide {
-  position: relative;
-  left: calc(100% + 1rem);
-  animation: scrollSide var(--scrollSideDuration) linear infinite;
-}
