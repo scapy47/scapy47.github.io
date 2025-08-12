@@ -90,7 +90,7 @@ $$
 \end{bmatrix}
 $$
 
-**_In this type of Matrix everything accept diagonal values are zero_**
+*In this type of Matrix everything accept diagonal values are zero*
 
 > Scalar Matrix
 
@@ -105,9 +105,9 @@ $$
 \end{bmatrix}
 $$
 
-**_Diagonal Matrix with every diagonal value being same_**
+*Diagonal Matrix with every diagonal value being same*
 
-> 🌟🌟 Identify Matrix 🌟🌟
+> **Identify Matrix**
 
 $$
 \begin{bmatrix}
@@ -122,8 +122,8 @@ $$
 \end{bmatrix}
 $$
 
-**_Scalar Matrix with every diagonal value being 1_**
-**Identify Matrix has use in Transformations it's basics building block in many mathematical systems**
+*Scalar Matrix with every diagonal value being 1*
+Identify Matrix has use in Transformations it's basics building block in many mathematical systems
 
 > Zero
 
