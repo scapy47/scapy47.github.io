@@ -22,11 +22,7 @@ $$
 \end{bmatrix}
 $$
 
-$$
-\Large m \times n=9 \text{ order matrix}
-$$
-
-> where $$m$$ is number of **rows** and $$n$$ is number of **columns**
+order of matrix is given by $$m \times n$$. where $$m$$ is number of **rows** and $$n$$ is number of **columns**. for above matrix it is $$3 \times 3 = 9$$ as $$m,n=3$$.
 
 > Two matrices are considered equal if both have same order and there components are same
 
