@@ -22,11 +22,7 @@ $$
 \end{bmatrix}
 $$
 
-$$
-\Large m \times n=9 \text{ order matrix}
-$$
-
-> where $$m$$ is number of **rows** and $$n$$ is number of **columns**
+order of matrix is given by $$m \times n$$. where $$m$$ is number of **rows** and $$n$$ is number of **columns**. for above matrix it is $$3 \times 3 = 9$$ as $$m,n=3$$.
 
 > Two matrices are considered equal if both have same order and there components are same
 
@@ -90,7 +86,7 @@ $$
 \end{bmatrix}
 $$
 
-**_In this type of Matrix everything accept diagonal values are zero_**
+*In this type of Matrix everything accept diagonal values are zero*
 
 > Scalar Matrix
 
@@ -105,9 +101,9 @@ $$
 \end{bmatrix}
 $$
 
-**_Diagonal Matrix with every diagonal value being same_**
+*Diagonal Matrix with every diagonal value being same*
 
-> 🌟🌟 Identify Matrix 🌟🌟
+> **Identify Matrix**
 
 $$
 \begin{bmatrix}
@@ -122,8 +118,8 @@ $$
 \end{bmatrix}
 $$
 
-**_Scalar Matrix with every diagonal value being 1_**
-**Identify Matrix has use in Transformations it's basics building block in many mathematical systems**
+*Scalar Matrix with every diagonal value being 1*
+Identify Matrix has use in Transformations it's basics building block in many mathematical systems
 
 > Zero
 
