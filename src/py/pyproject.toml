@@ -6,7 +6,17 @@ readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
     "manim>=0.19.0",
+    "numpy>=2.2.5",
     "taskipy>=1.14.1",
 ]
+
+[tool.pyright]
+exclude = [".venv"]
+venvPath = "."
+venv = ".venv"
+typeCheckingMode = "basic"
+reportUnusedCallResult = false
+reportUnknownMemberType = false
+reportMissingTypeStubs = false
 
 [tool.taskipy.tasks]
