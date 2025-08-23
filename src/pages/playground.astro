@@ -16,7 +16,7 @@ const isProd = import.meta.env.PROD;
     ) : (
       <Layout>
         <h1 class="p-6 text-6xl">Demo page</h1>
-        <Marquee client:idle speed={10}>
+        <Marquee client:idle >
           <div class="h-16 w-16 bg-red-700" />
           <div class="h-16 w-16 bg-red-700" />
           <div class="h-16 w-16 bg-red-700" />
