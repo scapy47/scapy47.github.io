@@ -1,4 +1,6 @@
-# What is matrices?
+# What is matrix?
+
+matrix are **list / array** of **number / functions** that are represented with enclosed brackets
 
 ## what is linear transformations
 
@@ -133,4 +135,4 @@ $$
 
 # Additional resources
 
-![[https://youtu.be/HgQzOmnBGCo]]
+https://youtu.be/HgQzOmnBGCo
