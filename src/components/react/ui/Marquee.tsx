@@ -1,66 +1,53 @@
-import { useEffect, Children, type ReactNode, useRef, useState } from "react"
+import { Children, useEffect, type ReactNode } from "react"
+import { motion, useAnimation } from "motion/react";
+import { cn } from "@/lib/utils";
 
 type Props = {
   children: ReactNode,
-  direction?: "left" | "right",
-  speed?: string | number,
-  gap?: string | number
+  className?: string
+  speed?: number
+  direction?: "left" | "right"
+  pauseOnHover?: boolean
 }
 
-export default ({
+export default function({
   children,
+  className,
+  speed = 0.5,
   direction = "left",
-  speed = "1s",
-  gap = "1rem"
-}: Props) => {
+  pauseOnHover
+}: Props) {
 
-  const items = Children.toArray(children);
-  const rootRef = useRef<HTMLDivElement>(null)
-  const [width, setWidth] = useState(0)
+  const controls = useAnimation()
 
   useEffect(() => {
+    controls.start({
+      x: direction === "left" ? ["0%", "-50%"] : ["-50%", "0%"],
+      transition: {
+        x: {
+          repeat: Number.POSITIVE_INFINITY,
+          repeatType: "loop",
+          duration: speed,
+          ease: "linear",
+        },
+      },
+    })
+  }, [controls, direction, speed])
 
-    if (rootRef.current && rootRef.current.parentElement) {
-      setWidth(parseInt(window.getComputedStyle(rootRef.current.parentElement).width.replace("px", "")))
-    }
-
-    return () => {
-      return
-    }
-  })
-
-  const stylesheet = `
-  @keyframes marqueeAnimA {
-      from {
-          transform: translateX(0);
-      }
-      to {
-          transform: translateX(-100%);
-      }
-  }`
-
+  const childArr = Children.toArray(children)
   return (
-    <div ref={rootRef} className="overflow-scroll flex items-center bg-amber-600 w-full">
-      <style>{stylesheet}</style>
-      <div className="w-full inline-flex" style={{ gap: `${gap}` }}>
-
-        <div className="inline-flex items-center" style={{ gap: `${gap}`, animation: `marqueeAnim ${speed} infinite` }}>
-          {items.map((c, i) => (
-            <div key={`a-${i}`} className="inline-flex items-center" >
-              {c}
-            </div>
-          ))}
-        </div>
-
-        <div aria-hidden className="inline-flex items-center" style={{ gap: `${gap}`, animation: `marqueeAnim ${speed} infinite` }}>
-          {items.map((c, i) => (
-            <div key={`b-${i}`} className="inline-flex items-center" >
-              {c}
-            </div>
-          ))}
-        </div>
-
-      </div>
+    <div className={cn("")}>
+      {childArr.map((c, i) => {
+        return <motion.div
+          key={`maq-${i}`}
+          initial={{
+            x: direction === "left" ? "0%" : "-50%",
+          }}
+          className={cn("", className)}
+          animate={controls}
+          children={c}
+        />
+      })}
     </div>
   )
 }
