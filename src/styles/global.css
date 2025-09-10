@@ -3,6 +3,7 @@
 
 @theme {
   --color-crimsom-red: #dc143c;
+  --color-light-thistle: #f4d5fd;
 }
 
 @layer base {
