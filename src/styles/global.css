@@ -22,3 +22,10 @@
     text-orientation: upright;
   }
 }
+
+:root {
+  @supports (scrollbar-width: auto) {
+        scrollbar-color: var(--color-crimsom-red) black
+        scrollbar-width: tain;
+  }
+}
