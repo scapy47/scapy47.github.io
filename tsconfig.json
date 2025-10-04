@@ -1,33 +1,18 @@
 {
   "extends": "astro/tsconfigs/strict",
-  "include": [
-    ".astro/types.d.ts",
-    "**/*"
-  ],
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
+  "include": [".astro/types.d.ts", "**/*"],
+  "exclude": ["dist"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "src/*"
-      ],
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ]
+      "@/*": ["src/*"],
+      "@components/*": ["src/components/*"],
+      "@layouts/*": ["src/layouts/*"]
     },
+    "jsx": "preserve",
+    "jsxImportSource": "react",
     "strictNullChecks": true,
     "skipLibCheck": true,
-    "allowJs": true,
-  },
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.react.json" },
-    { "path": "./tsconfig.solid.json" }
-  ]
+    "allowJs": true
+  }
 }
