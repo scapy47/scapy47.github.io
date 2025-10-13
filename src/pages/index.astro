@@ -8,27 +8,35 @@ import Marquee from "@/components/react/ui/Marquee";
 
 <Layout title="Hello there" theme="black">
   <nav
-    class="wMode-vlr fixed z-50 flex h-full list-none justify-around font-extrabold uppercase backdrop-blur-3xl"
+    class="orbitron-regular wMode-vlr border-crimsom-red absolute right-0 z-50 h-full list-none overflow-clip rounded-4xl border-4 uppercase backdrop-blur-2xl"
   >
-    <li class="p-4">
-      <a href="/" class="p-4">hello</a>
-    </li>
-    <li class="p-4">
-      <a href="/" class="p-4">where</a>
-    </li>
-    <li class="p-4">
-      <a href="/" class="p-4">what</a>
-    </li>
-    <li class="p-4">
-      <a href="/notes/" class="hover:text-crimsom-red">ノート</a>
-    </li>
+    <ul class="flex flex-row items-center justify-evenly w-ful h-full">
+      <li>
+        <a href="/" class="p-4">
+          <Hacktxt className="nav-name" text="alpha" client:idle />
+        </a>
+      </li>
+      <li>
+        <a href="/" class="p-4">
+          <Hacktxt className="nav-name" text="beta" client:idle />
+        </a>
+      </li>
+      <li>
+        <a href="/" class="p-4">
+          <Hacktxt className="nav-name" text="gama" client:idle />
+        </a>
+      </li>
+      <li>
+        <a href="/notes/" class="hover:text-crimsom-red p-4"
+          ><Hacktxt className="nav-name" text="notes" client:idle />
+        </a>
+      </li>
+    </ul>
   </nav>
   <main class="">
-    <!-- <Ticker /> -->
     <section
       class="relative h-svh overflow-y-hidden bg-[radial-gradient(circle_at_top,black_60%_50%,#CC0033_64%,black_50%,#990033_135%)]"
     >
-      <!-- TODO: card dimension should be static on px or any static unit -->
       <div
         class="border-crimsom-red perspective-a absolute top-[25%] left-[40%] z-20 m-0 aspect-[4/3] w-3/6 rounded-2xl border-2 bg-[rgba(0,255,255,0.1)] p-4 backdrop-blur-sm"
       >
@@ -55,31 +63,37 @@ import Marquee from "@/components/react/ui/Marquee";
           className="textO-upright wMode-vlr"
           client:idle
           text="システム起動中..."
+          lg="jp"
         />
         <Hacktxt
           className="textO-upright wMode-vlr"
           client:idle
           text="コネクテッド・トゥ・ワイアード..."
+          lg="jp"
         />
         <Hacktxt
           className="textO-upright wMode-vlr"
           client:idle
           text="システム同期中..."
+          lg="jp"
         />
         <Hacktxt
           className="textO-upright wMode-vlr block"
           client:idle
           text="プロトコル認証「成功」"
+          lg="jp"
         />
         <Hacktxt
           className="textO-upright wMode-vlr block"
           client:idle
           text="データストリーム接続確立"
+          lg="jp"
         />
         <Hacktxt
           className="textO-upright wMode-vlr block"
           client:idle
           text="ユーザーID 「スキャピー47」"
+          lg="jp"
         />
       </div>
       <div

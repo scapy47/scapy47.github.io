@@ -3,15 +3,36 @@ import { useMemo, useRef, useState } from "react";
 interface props {
   text: string;
   className?: string;
+  id?: string;
+  lg?: "en" | "jp";
 }
 
-const Hacktxt = ({ text, className }: props) => {
+const Hacktxt = ({ text, className, lg = "en", id }: props) => {
   const [txt, setTxt] = useState<string>(text);
 
   //  get unicode char
   const charVec = useMemo(() => {
+
+    let start: number;
+    let end: number;
+
+    switch (lg) {
+      case "en":
+        start = 0x0061;
+        end = 0x007A;
+        break;
+      case "jp":
+        start = 0x3042;
+        end = 0x3093;
+        break;
+      default:
+        start = 0x0041;
+        end = 0x005A;
+        break;
+    }
+
     const Arr: Array<string> = [];
-    for (let i = 0x3042; i < 0x3093; i++) {
+    for (let i = start; i < end; i++) {
       Arr.push(String.fromCharCode(i));
     }
     return Arr;
@@ -63,6 +84,7 @@ const Hacktxt = ({ text, className }: props) => {
   return (
     <span
       className={className}
+      id={id}
       onTouchStart={animation}
       onTouchEnd={animation}
       onClick={animation}
