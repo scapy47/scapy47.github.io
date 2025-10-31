@@ -8,9 +8,11 @@ import Marquee from "@/components/react/ui/Marquee";
 
 <Layout title="Hello there" theme="black">
   <nav
-    class="orbitron-regular wMode-vlr border-crimsom-red absolute right-0 z-50 h-full list-none overflow-clip rounded-4xl border-4 uppercase backdrop-blur-2xl"
+    class="orbitron-regular border-crimsom-red absolute right-0 z-50 hidden h-full w-18 overflow-clip rounded-4xl border-4 backdrop-blur-2xl sm:block lg:w-1/12"
   >
-    <ul class="flex flex-row items-center justify-evenly w-ful h-full">
+    <ul
+      class="w-ful wMode-vlr flex h-full w-full list-none flex-row items-center justify-evenly uppercase"
+    >
       <li>
         <a href="/" class="p-4">
           <Hacktxt className="nav-name" text="alpha" client:idle />
@@ -40,11 +42,14 @@ import Marquee from "@/components/react/ui/Marquee";
       <div
         class="border-crimsom-red perspective-a absolute top-[25%] left-[40%] z-20 m-0 aspect-[4/3] w-3/6 rounded-2xl border-2 bg-[rgba(0,255,255,0.1)] p-4 backdrop-blur-sm"
       >
-        <p class="dotgothic16-regular">
+        <p
+          class="dotgothic16-regular flex h-full w-full items-center justify-center"
+        >
           <Hacktxt
-            className=""
+            lg="jp"
+            className="text-4xl capitalize"
             client:idle
-            text="Lorem ipsum, dolor sit amet consectetur"
+            text="CRIME COEFFICIENT 0"
           />
         </p>
       </div>
@@ -56,46 +61,46 @@ import Marquee from "@/components/react/ui/Marquee";
         alt="hello there"
         class="pointer-events-none relative z-30 h-full w-full bg-center bg-no-repeat object-cover object-left-top"
       />
-      <div
-        class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly"
-      >
-        <Hacktxt
-          className="textO-upright wMode-vlr"
-          client:idle
-          text="システム起動中..."
-          lg="jp"
-        />
-        <Hacktxt
-          className="textO-upright wMode-vlr"
-          client:idle
-          text="コネクテッド・トゥ・ワイアード..."
-          lg="jp"
-        />
-        <Hacktxt
-          className="textO-upright wMode-vlr"
-          client:idle
-          text="システム同期中..."
-          lg="jp"
-        />
-        <Hacktxt
-          className="textO-upright wMode-vlr block"
-          client:idle
-          text="プロトコル認証「成功」"
-          lg="jp"
-        />
-        <Hacktxt
-          className="textO-upright wMode-vlr block"
-          client:idle
-          text="データストリーム接続確立"
-          lg="jp"
-        />
-        <Hacktxt
-          className="textO-upright wMode-vlr block"
-          client:idle
-          text="ユーザーID 「スキャピー47」"
-          lg="jp"
-        />
-      </div>
+      <!-- <div -->
+      <!--   class="dotgothic16-regular absolute top-0 z-10 flex w-full justify-evenly" -->
+      <!-- > -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr" -->
+      <!--     client:idle -->
+      <!--     text="システム起動中..." -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr" -->
+      <!--     client:idle -->
+      <!--     text="コネクテッド・トゥ・ワイアード..." -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr" -->
+      <!--     client:idle -->
+      <!--     text="システム同期中..." -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr block" -->
+      <!--     client:idle -->
+      <!--     text="プロトコル認証「成功」" -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr block" -->
+      <!--     client:idle -->
+      <!--     text="データストリーム接続確立" -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!--   <Hacktxt -->
+      <!--     className="textO-upright wMode-vlr block" -->
+      <!--     client:idle -->
+      <!--     text="ユーザーID 「スキャピー47」" -->
+      <!--     lg="jp" -->
+      <!--   /> -->
+      <!-- </div> -->
       <div
         class="text-crimsom-red orbitron-regular absolute top-[12rem] left-[-15rem] w-svw -rotate-45 overflow-hidden border-2 border-orange-600 bg-black text-center text-8xl font-bold text-nowrap capitalize"
       >
