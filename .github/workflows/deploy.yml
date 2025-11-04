@@ -30,8 +30,11 @@ jobs:
           node-version: 20
           cache: 'pnpm'
 
+      - name: Clean pnpm store (prevent corrupted cache)
+        run: pnpm store prune || true
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install --frozen-lockfile --store=node_modules/.pnpm-store
 
       - name: Build
         run: pnpm run build
