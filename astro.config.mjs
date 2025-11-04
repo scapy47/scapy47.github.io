@@ -15,10 +15,6 @@ export default defineConfig({
       include: ["**/react/*"],
       experimentalReactChildren: true,
     }),
-    solidJs({
-      devtools: true,
-      include: ['**/solid/*', '**/node_modules/@suid/material/**'],
-    })
   ],
   markdown: {
     rehypePlugins: [rehypeKatex],

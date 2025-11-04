@@ -1,7 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Marquee from "@components/react/ui/Marquee";
-import { Counter } from "@/components/solid/Counter";
 
 const isProd = import.meta.env.PROD;
 ---
@@ -28,7 +27,6 @@ const isProd = import.meta.env.PROD;
             <div class="h-16 w-16 bg-red-700" />
           </div>
         </Marquee>
-        <Counter client:idle/>
       </Layout>
     )
   }
