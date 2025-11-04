@@ -5,8 +5,6 @@ import remarkMath from "remark-math";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
-import solidJs from "@astrojs/solid-js";
-
 // https://astro.build/config
 export default defineConfig({
   site: "https://Scapy47.github.io",
