@@ -24,20 +24,21 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
     rel="stylesheet"
   />
 
-
   <main class="pointGridMatrix mr-auto ml-auto max-w-2xl p-6">
-    <h1 class="doto-900 text-6xl mb-16">
+    <h1 class="doto-900 text-6xl">
       {Heading}
     </h1>
-
+    <hr class="prose bg-crimsom-red mt-4 mb-16 h-1 border-dotted" />
     <article
-      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg"
+      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg quantico-regular"
     >
       <Content />
     </article>
   </main>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
     :root {
       --color: if(
         media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ;
@@ -64,6 +65,11 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
       font-weight: 900;
       font-style: normal;
       font-variation-settings: "ROND" 0;
+    }
+    .quantico-regular {
+      font-family: "Quantico", sans-serif;
+      font-weight: 400;
+      font-style: normal;
     }
   </style>
   <style is:inline>

@@ -134,5 +134,4 @@ $$
 $$
 
 # Additional resources
-
-<div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;"><iframe src="https://www.youtube.com/embed/HgQzOmnBGCo?rel=0&cc_load_policy=1" style="top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;" allowfullscreen scrolling="no" allow="accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;"></iframe></div>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/wGpHp03-D3NEy9Rhwww.youtube.com/watch?v" title="" frameBorder="0"   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"  allowFullScreen><br>Powered by <a href="https://youtubeembedcode.com/">embed youtube wordpress</a> and <a href="https://udenrofus.com/">casino uden rofus</a></iframe></p>
