@@ -1,6 +1,5 @@
 ---
 import { getCollection } from "astro:content";
-import NotesLayout from "@layouts/NotesLayout.astro";
 import { render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -20,10 +19,59 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
 ---
 
 <Layout theme="black" className="bg-black">
-    <h1 class="text-6xl text-transparent text-stroke-2 text-stroke-[#DC143C] [-webkit-text-stroke:0.1_white] [text-shadow:0_0_0.5rem_red,0_0_16px_#DC143C]">
+  <link
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    rel="stylesheet"
+  />
+
+
+  <main class="pointGridMatrix mr-auto ml-auto max-w-2xl p-6">
+    <h1 class="doto-900 text-6xl mb-16">
       {Heading}
     </h1>
-  <NotesLayout>
-    <Content />
-  </NotesLayout>
+
+    <article
+      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg"
+    >
+      <Content />
+    </article>
+  </main>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+    :root {
+      --color: if(
+        media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ;
+          else: hsla(0 0% 0% / 0.6)
+      );
+    }
+    .pointGridMatrix {
+      background-image:
+        radial-gradient(
+          circle at center,
+          hsla(348 83% 47% / 0.6) 0.05rem,
+          transparent 0
+        ),
+        radial-gradient(circle at center, var(--color) 0.05rem, transparent 0);
+      background-size: 2rem 2rem;
+      background-position:
+        0 0,
+        1rem 1rem;
+    }
+
+    .doto-900 {
+      font-family: "Doto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+      font-variation-settings: "ROND" 0;
+    }
+  </style>
+  <style is:inline>
+    iframe {
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 0.2rem dotted cyan;
+    }
+  </style>
 </Layout>
