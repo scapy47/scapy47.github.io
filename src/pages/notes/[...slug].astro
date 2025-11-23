@@ -1,11 +1,11 @@
 ---
-import { getCollection } from "astro:content";
-import { render } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("notes");
+  console.log(posts.map((post) => post.id));
   return posts.map((post) => ({
-    params: { slug: post.id },
+    params: { slug: post.id, id: post.id },
     props: { post },
   }));
 }
@@ -15,7 +15,7 @@ import Layout from "@/layouts/Layout.astro";
 const { post } = Astro.props;
 const { Content } = await render(post);
 const fileName = post.filePath?.match(/([^/]+)(?=\.[^/.]+$)/)?.[0];
-const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
+const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
 ---
 
 <Layout theme="black" className="bg-black">
@@ -28,7 +28,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
     <h1 class="doto-900 text-6xl">
       {Heading}
     </h1>
-    <hr class="prose bg-crimsom-red mt-4 mb-16 h-1 border-dotted" />
+    <div class="prose bg-crimsom-red mt-4 mb-16 h-1" />
     <article
       class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg quantico-regular"
     >
@@ -49,7 +49,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
       background-image:
         radial-gradient(
           circle at center,
-          hsla(348 83% 47% / 0.6) 0.05rem,
+          hsl(348, 83%, 47%) 0.05rem,
           transparent 0
         ),
         radial-gradient(circle at center, var(--color) 0.05rem, transparent 0);
@@ -78,6 +78,8 @@ const Heading = fileName?.replace(/^./, fileName?.at(0)?.toUpperCase() || "");
       overflow: hidden;
       border-radius: 1rem;
       border: 0.2rem dotted cyan;
+      margin-left: auto;
+      margin-right: auto;
     }
   </style>
 </Layout>
