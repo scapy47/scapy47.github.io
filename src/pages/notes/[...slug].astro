@@ -24,13 +24,13 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
     rel="stylesheet"
   />
 
-  <main class="pointGridMatrix mr-auto ml-auto max-w-2xl p-6">
+  <main class="pointGridMatrix mr-auto ml-auto max-w-2xl p-6 select-text selection:bg-crimsom-red">
     <h1 class="doto-900 text-6xl">
       {Heading}
     </h1>
-    <div class="prose bg-crimsom-red mt-4 mb-16 h-1" />
+    <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>
     <article
-      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg quantico-regular"
+      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg quantico-regular prose-p:text-lg"
     >
       <Content />
     </article>
