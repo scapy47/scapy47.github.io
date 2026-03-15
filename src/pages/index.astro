@@ -1,13 +1,35 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import Hacktxt from "@/components/react/ui/Hacktxt";
 ---
 
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+  rel="stylesheet"
+/>
+
+<style>
+  html,
+  body {
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+  }
+</style>
+
 <Layout theme="black">
-  <h1>restart cause previus one was shit</h1>
-  <br />
-  <li>
-    <a href="/notes/" class="hover:bg-crimsom-red hover:text-white p-4 text-crimsom-red"
-      >link to notes if you need it</a
+  <section>
+    <nav
+      class="absolute right-0 flex h-full w-full flex-row place-items-center justify-end"
     >
-  </li>
+      <a href="/notes"><Hacktxt client:idle text="Notes" /></a>
+    </nav>
+    <main class="h-lvh w-full bg-green-300"></main>
+  </section>
+  <section class="h-lvh w-full bg-yellow-300"></section>
+  <section class="h-lvh w-full bg-blue-300"></section>
+  <section class="h-lvh w-full bg-pink-300"></section>
 </Layout>
