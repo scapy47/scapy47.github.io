@@ -13,7 +13,7 @@ const paths = posts.map((e) => e.id).sort();
       {
         paths.map((e) => (
           <li>
-            <a class="text-red-600" href={e}>
+            <a class="text-red-600" href={`/notes/${e}`}>
               {e}
             </a>
           </li>
