@@ -1,0 +1,33 @@
+---
+import Layout from "@layouts/Layout.astro";
+import Marquee from "@components/react/ui/Marquee";
+
+const isProd = import.meta.env.PROD;
+---
+
+<html>
+  <head><title>Playground</title></head>
+  {
+    isProd ? (
+      <body>
+        <h1>Playground Page</h1>
+        <p>This page is only accessible during development.</p>
+      </body>
+    ) : (
+      <Layout>
+        <h1 class="p-6 text-6xl">Demo page</h1>
+        <Marquee client:idle>
+          <div class="flex w-full">
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+            <div class="h-16 w-16 bg-red-700" />
+          </div>
+        </Marquee>
+      </Layout>
+    )
+  }
+</html>

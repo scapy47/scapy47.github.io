@@ -1,0 +1,188 @@
+{
+  "main": {
+    "id": "56e5a205f2f03511",
+    "type": "split",
+    "children": [
+      {
+        "id": "0c0e460865d67cce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "51c02d3922e54ab2",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "maths/Vectors.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Vectors"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "0f71881ebfb6615d",
+    "type": "split",
+    "children": [
+      {
+        "id": "8f126d5ef864caa1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "562db5cf08997678",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "0387ef82a467902e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "a3e5ed6ded9e2e80",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 268.5,
+    "collapsed": true
+  },
+  "right": {
+    "id": "83594d14ab1a638c",
+    "type": "split",
+    "children": [
+      {
+        "id": "29f97d5c2437fa77",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "35d653d14466b615",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks"
+            }
+          },
+          {
+            "id": "87f3fd1a0d907937",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links"
+            }
+          },
+          {
+            "id": "f42bd010d918c189",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "2569e7b8711c8ad6",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "physics/mechanics/Vectors.mdx"
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Vectors"
+            }
+          }
+        ],
+        "currentTab": 3
+      }
+    ],
+    "direction": "horizontal",
+    "width": 200,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "51c02d3922e54ab2",
+  "lastOpenFiles": [
+    "maths/Vectors.md",
+    "Everything is a Function.md",
+    "miscellaneous/Kepler's laws.md",
+    "miscellaneous/Uncertainty principle.md",
+    "chemistry/Bohr's atomic model.md",
+    "maths/Vectors.mdx",
+    "physics/electricity_and_magnetism/Electric_Charge.mdx",
+    "biology",
+    "miscellaneous/Ampere's law.md",
+    "chemistry",
+    "chem",
+    "chemistory",
+    "miscellaneous/Faraday's law.md",
+    "miscellaneous/Biot-savart's law.md",
+    "miscellaneous/Kirchhoff's law.md",
+    "physics/electricity_and_magnetism/Electric_Charge.md",
+    "assets",
+    "maths",
+    "physics/electricity_and_magnetism"
+  ]
+}

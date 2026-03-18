@@ -1,0 +1,27 @@
+---
+const isProd = import.meta.env.PROD;
+interface Props {
+  title?: string;
+  msg?: string;
+}
+
+const { title, msg } = Astro.props;
+---
+
+{
+  isProd ? (
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{title || "Demo page"}</title>
+      </head>
+      <body>
+        <h1>{title || "Demo page"}</h1>
+        <p>{msg || "This page is only accessible during development."}</p>
+      </body>
+    </html>
+  ) : (
+    <slot />
+  )
+}
