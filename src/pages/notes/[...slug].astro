@@ -1,0 +1,87 @@
+---
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("notes");
+  console.log(posts.map((post) => post.id));
+  return posts.map((post) => ({
+    params: { slug: post.id, id: post.id },
+    props: { post },
+  }));
+}
+
+import Layout from "@/layouts/Layout.astro";
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const fileName = post.filePath?.match(/([^/]+)(?=\.[^/.]+$)/)?.[0];
+const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
+---
+
+<Layout theme="black" className="bg-black">
+  <link
+    href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
+    rel="stylesheet"
+  />
+
+  <main
+    class="pointGridMatrix selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
+  >
+    <h1 class="doto-900 truncate text-6xl">
+      {Heading}
+    </h1>
+    <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>
+    <article
+      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg quantico-regular prose-p:text-lg"
+    >
+      <Content />
+    </article>
+  </main>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+    :root {
+      --color: if(
+        media(prefers-color-scheme: dark): hsla(0 0% 100% / 0.6) ;
+          else: hsla(0 0% 0% / 0.6)
+      );
+    }
+    .pointGridMatrix {
+      background-image:
+        radial-gradient(
+          circle at center,
+          hsl(348, 83%, 47%) 0.05rem,
+          transparent 0
+        ),
+        radial-gradient(circle at center, var(--color) 0.05rem, transparent 0);
+      background-size: 2rem 2rem;
+      background-position:
+        0 0,
+        1rem 1rem;
+    }
+
+    .doto-900 {
+      font-family: "Doto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+      font-variation-settings: "ROND" 0;
+    }
+    .quantico-regular {
+      font-family: "Quantico", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+  </style>
+  <style is:inline>
+    iframe {
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 0.2rem dotted cyan;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</Layout>

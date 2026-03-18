@@ -1,0 +1,40 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<style>
+  #input {
+    display: none;
+  }
+</style>
+
+<Layout>
+  <main>
+    <div id="input-box" class="grid h-full w-full place-items-center">
+      <input id="input" type="file" accept="text/csv" />
+      <button id="input-btn" class="bg-red-600 text-blue-100"
+        >upload csv file here</button
+      >
+    </div>
+  </main>
+</Layout>
+
+<script>
+  const input = document.getElementById("input") as HTMLInputElement;
+  const btn = document.getElementById("input-btn") as HTMLButtonElement;
+
+  input.addEventListener("input", (e) => {
+    const target = e.target as HTMLInputElement;
+    target.files && target.files.length > 0 && render(target.files[0]);
+  });
+
+  function render(file: File) {
+    //  TODO: render that file
+  }
+
+  document.addEventListener("click", (e) => {
+    e.target === btn
+      ? input.click()
+      : console.error("input button is not connected to input element");
+  });
+</script>
