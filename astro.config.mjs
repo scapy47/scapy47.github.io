@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://Scapy47.github.io",
+  site: "https://scapy47.pages.dev",
 
   integrations: [
     react({
@@ -22,7 +22,6 @@ export default defineConfig({
   },
 
   vite: {
-    // @ts-ignore
     plugins: [tailwindcss()],
   },
 });
