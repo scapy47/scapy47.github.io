@@ -3,23 +3,6 @@ import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/react/ui/Hacktxt";
 ---
 
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
-  rel="stylesheet"
-/>
-
-<style>
-  html,
-  body {
-    font-family: "JetBrains Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-  }
-</style>
-
 <Layout theme="black">
   <section>
     <nav
@@ -48,4 +31,7 @@ import Hacktxt from "@/components/react/ui/Hacktxt";
   <!--       alert("Failed to connect to Hono. Check console!"); -->
   <!--     }); -->
   <!-- </script> -->
+  <footer class="flex w-full items-center justify-center bg-black">
+    <p>Copyright (c) 2026 Author. All Rights Reserved.</p>
+  </footer>
 </Layout>
