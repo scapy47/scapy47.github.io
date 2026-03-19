@@ -25,14 +25,14 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
   />
 
   <main
-    class="pointGridMatrix selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
+    class="pointGridMatrix h-lvh selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
   >
     <h1 class="doto-900 truncate text-6xl">
       {Heading}
     </h1>
     <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>
     <article
-      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-p:text-lg jetbarins-mono-semibold"
+      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-p:text-lg"
     >
       <Content />
     </article>
@@ -40,6 +40,14 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
     @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+    html,
+    body {
+      font-family: "JetBrains Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: 600;
+      font-style: normal;
+    }
 
     :root {
       --color: if(
@@ -68,12 +76,6 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
       font-style: normal;
       font-variation-settings: "ROND" 0;
     }
-    .jetbarins-mono-semibold {
-      font-family: "JetBrains Mono", monospace;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-    }
   </style>
   <style is:inline>
     iframe {
@@ -85,4 +87,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
       margin-right: auto;
     }
   </style>
+  <footer class="flex w-full items-center justify-center bg-black">
+    <p>Copyright (c) 2026 Author. All Rights Reserved.</p>
+  </footer>
 </Layout>
