@@ -1,20 +1,37 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/react/ui/Hacktxt";
+import { Icon } from "astro-icon/components";
 
-const year = new Date().getFullYear();
+const info = {
+  year: new Date().getFullYear(),
+};
 ---
 
+<script>
+  (document.querySelector("#navigationBtn") as HTMLButtonElement).onclick =
+    () => {
+      navigator.vibrate(100);
+    };
+</script>
 <Layout theme="black">
   <nav
-    class="border-crimson corner-bevel wMode-vlr hover:wMode-normal shadow-center animate-expand fixed top-0 right-0 h-full w-fit animate-pulse rounded-tl-4xl rounded-bl-4xl border-2 px-6 hover:py-12"
+    class="border-crimson corner-bevel shadow-center animate-dwidth bg-crimson/35 fixed right-4 bottom-4 h-fit w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl hover:h-[calc(100%-2rem)] hover:w-[calc(100%-2rem)] lg:top-4 lg:w-2/12"
   >
-    <a class="text-xl" href="/notes">notes</a>
+    <button
+      class="grid w-full cursor-pointer place-items-center"
+      id="navigationBtn"
+      ><Icon
+        class={"text-orange-400"}
+        name="line-md:compass-twotone-loop"
+        size={60}
+      /></button
+    >
   </nav>
 
-  <main class="h-lvh w-full bg-black flex justify-center items-center">
+  <main class="flex h-lvh items-center justify-center bg-black">
     <div
-      class="corner-br-bevel border-crimson shadow-center z-50 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic"
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 z-50 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
       <p class="hover:text-crimson text-2xl text-gray-400">
         <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)"
@@ -22,8 +39,7 @@ const year = new Date().getFullYear();
         >
       </p>
       <Hacktxt className="text-6xl font-extralight" text="0.00" client:load />
-      <span> </span>
-      <Hacktxt className="text-4xl font-extralight" text="-0" client:load />
+      <Hacktxt className="text-4xl font-extralight" text=" -0" client:load />
       <p class="text-2xl text-gray-400">TARGET:</p>
       <p class="text-xl">Not Target</p>
     </div>
@@ -34,12 +50,14 @@ const year = new Date().getFullYear();
   <section class="h-lvh w-full bg-pink-300"></section>
 
   <footer class="flex w-full items-center justify-center bg-black">
-    <p>Copyright (c) {year} Author. All Rights Reserved.</p>
+    <p>Copyright (c) {info.year} Author. All Rights Reserved.</p>
   </footer>
 
   <style>
-    .animate-expand {
-      transition: width 1s ease-in-out;
+    .animate-dwidth {
+      transition:
+        width 0.8s cubic-bezier(0.86, 0, 0.14, 1),
+        height 1s cubic-bezier(0.86, 0, 0.14, 1);
     }
   </style>
 </Layout>

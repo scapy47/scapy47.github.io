@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant hover (&:hover);
 @plugin "@tailwindcss/typography";
 @plugin "@toolwind/corner-shape";
 
@@ -28,9 +29,12 @@
   text-orientation: upright;
 }
 
-html {
+:root {
   @supports (scrollbar-width: auto) {
     scrollbar-color: var(--color-crimson) black;
     scrollbar-width: thin;
+  }
+  @supports (interpolate-size: allow-keywords) {
+    interpolate-size: allow-keywords;
   }
 }
