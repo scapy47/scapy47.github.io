@@ -1,31 +1,36 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
+@plugin "@toolwind/corner-shape";
 
 @theme {
-  --color-crimsom-red: #dc143c;
-  --color-light-thistle: #f4d5fd;
+  --color-crimson: #dc143c;
 }
 
 @layer base {
-  html,
-  body {
+  html, body {
     @apply m-0 h-full w-full p-0 select-none dark:bg-black dark:text-white;
   }
 }
 
-@layer utilities {
-  .wMode-vlr {
-    writing-mode: vertical-lr;
-  }
+@utility shadow-center {
+  box-shadow: 0 0 2.2rem 0.6rem color-mix(in srgb, var(--color-crimson) 30%, transparent);
+}
 
-  .textO-upright {
-    text-orientation: upright;
-  }
+@utility wMode-vlr {
+  writing-mode: vertical-lr;
+}
+
+@utility wMode-normal {
+  writing-mode: horizontal-tb;
+}
+
+@utility textO-upright {
+  text-orientation: upright;
 }
 
 html {
   @supports (scrollbar-width: auto) {
-        scrollbar-color: var(--color-crimsom-red) black
-        scrollbar-width: tain;
+    scrollbar-color: var(--color-crimson) black;
+    scrollbar-width: thin;
   }
 }
