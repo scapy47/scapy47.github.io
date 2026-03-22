@@ -9,8 +9,15 @@ const info = {
 ---
 
 <style>
-  .transition-all {
+  @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+  #navigation {
     transition: all 0.8s cubic-bezier(0.86, 0, 0.14, 1);
+
+    font-family: "JetBrains Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
   }
 </style>
 
@@ -18,20 +25,34 @@ const info = {
   const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
   const el = document.querySelector("#navigation") as HTMLDivElement;
 
-  btn.onclick = () => {
-    navigator.vibrate(100);
+  const ul = document.querySelector("#navigation > ul") as HTMLUListElement;
 
+  const toggle_state = () => {
     el.style.width =
-      el.style.width === "fit-content" ? "calc(100% - 2rem)" : "fit-content";
+      el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
+
+    el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
   };
+
+  document.addEventListener("click", (e) => {
+    if (el && !el.contains(e.target as Node)) {
+      toggle_state();
+    }
+
+    if (btn && btn.contains(e.target as Node)) {
+      navigator.vibrate(100);
+      toggle_state();
+    }
+  });
 </script>
 
 <Layout theme="black">
   <nav
     id="navigation"
-    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 h-16 w-fit overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl transition-all lg:top-4"
+    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
   >
     <button
+      title="show navigations"
       class="grid w-full cursor-pointer place-items-center"
       id="navigationBtn"
       ><Icon
@@ -40,14 +61,31 @@ const info = {
         size={60}
       /></button
     >
-    <ul class="flex justify-end px-6 text-4xl">
-      <li><a href="/notes"><Hacktxt text="Notes" client:idle /></a></li>
+    <ul
+      class="flex flex-col items-end px-6 text-7xl"
+    >
+      <li>
+        <a class="active:text-crimson hover:text-crimson" href="/"
+          ><Hacktxt text="Home" client:idle /></a>
+      </li>
+      <li>
+        <a class="active:text-crimson hover:text-crimson" href="/notes"
+          ><Hacktxt text="Notes" client:idle /></a>
+      </li>
+      <li>
+        <a class="active:text-crimson hover:text-crimson" href="/tools"
+          ><Hacktxt text="Tools" client:idle /></a>
+      </li>
+      <li>
+        <a class="active:text-crimson hover:text-crimson" href="/scripts"
+          ><Hacktxt text="Notes" client:idle /></a>
+      </li>
     </ul>
   </nav>
 
   <main class="flex h-lvh items-center justify-center bg-black">
     <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 z-50 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
       <p class="hover:text-crimson text-2xl text-gray-400">
         <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)"
