@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@custom-variant hover (&:hover);
 @plugin "@tailwindcss/typography";
 @plugin "@toolwind/corner-shape";
 

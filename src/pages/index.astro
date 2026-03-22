@@ -8,15 +8,28 @@ const info = {
 };
 ---
 
+<style>
+  .transition-all {
+    transition: all 0.8s cubic-bezier(0.86, 0, 0.14, 1);
+  }
+</style>
+
 <script>
-  (document.querySelector("#navigationBtn") as HTMLButtonElement).onclick =
-    () => {
-      navigator.vibrate(100);
-    };
+  const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
+  const el = document.querySelector("#navigation") as HTMLDivElement;
+
+  btn.onclick = () => {
+    navigator.vibrate(100);
+
+    el.style.width =
+      el.style.width === "fit-content" ? "calc(100% - 2rem)" : "fit-content";
+  };
 </script>
+
 <Layout theme="black">
   <nav
-    class="border-crimson corner-bevel shadow-center animate-dwidth bg-crimson/35 fixed right-4 bottom-4 h-fit w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl hover:h-[calc(100%-2rem)] hover:w-[calc(100%-2rem)] lg:top-4 lg:w-2/12"
+    id="navigation"
+    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 h-16 w-fit overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl transition-all lg:top-4"
   >
     <button
       class="grid w-full cursor-pointer place-items-center"
@@ -27,6 +40,9 @@ const info = {
         size={60}
       /></button
     >
+    <ul class="flex justify-end px-6 text-4xl">
+      <li><a href="/notes"><Hacktxt text="Notes" client:idle /></a></li>
+    </ul>
   </nav>
 
   <main class="flex h-lvh items-center justify-center bg-black">
@@ -52,12 +68,4 @@ const info = {
   <footer class="flex w-full items-center justify-center bg-black">
     <p>Copyright (c) {info.year} Author. All Rights Reserved.</p>
   </footer>
-
-  <style>
-    .animate-dwidth {
-      transition:
-        width 0.8s cubic-bezier(0.86, 0, 0.14, 1),
-        height 1s cubic-bezier(0.86, 0, 0.14, 1);
-    }
-  </style>
 </Layout>
