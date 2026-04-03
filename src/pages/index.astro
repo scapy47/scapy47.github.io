@@ -23,26 +23,24 @@ const info = {
 
 <script>
   const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
-  const el = document.querySelector("#navigation") as HTMLDivElement;
+  const el = document.querySelector<HTMLDivElement>("#navigation");
 
-  const ul = document.querySelector("#navigation > ul") as HTMLUListElement;
+  const icon_a = document.querySelector<HTMLElement>(".icon-a");
+  const icon_b = document.querySelector<HTMLElement>(".icon-b");
 
   const toggle_state = () => {
+    if (!el || !icon_a || !icon_b) return;
     el.style.width =
       el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
 
     el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
+
+    icon_a.style.display = icon_a.style.display !== "none" ? "none" : "";
+    icon_b.style.display = icon_b.style.display !== "inline" ? "inline" : "";
   };
 
-  document.addEventListener("click", (e) => {
-    if (el && !el.contains(e.target as Node)) {
-      toggle_state();
-    }
-
-    if (btn && btn.contains(e.target as Node)) {
-      navigator.vibrate(100);
-      toggle_state();
-    }
+  btn.addEventListener("click", () => {
+    toggle_state();
   });
 </script>
 
@@ -53,32 +51,39 @@ const info = {
   >
     <button
       title="show navigations"
-      class="grid w-full cursor-pointer place-items-center"
+      class="grid w-full cursor-pointer place-items-center mb-6 bg-cyan-400/10"
       id="navigationBtn"
       ><Icon
-        class={"text-orange-400"}
+        class={"icon-a text-orange-400"}
         name="line-md:compass-twotone-loop"
         size={60}
-      /></button
-    >
-    <ul
-      class="flex flex-col items-end px-6 text-7xl"
-    >
+      />
+      <Icon
+        class={"icon-b hidden text-crimson"}
+        name="line-md:close"
+        size={60}
+      />
+    </button>
+    <ul class="flex flex-col items-end px-6 text-7xl">
       <li>
         <a class="active:text-crimson hover:text-crimson" href="/"
-          ><Hacktxt text="Home" client:idle /></a>
+          ><Hacktxt text="Home" client:idle /></a
+        >
       </li>
       <li>
         <a class="active:text-crimson hover:text-crimson" href="/notes"
-          ><Hacktxt text="Notes" client:idle /></a>
+          ><Hacktxt text="Notes" client:idle /></a
+        >
       </li>
       <li>
         <a class="active:text-crimson hover:text-crimson" href="/tools"
-          ><Hacktxt text="Tools" client:idle /></a>
+          ><Hacktxt text="Tools" client:idle /></a
+        >
       </li>
       <li>
         <a class="active:text-crimson hover:text-crimson" href="/scripts"
-          ><Hacktxt text="Notes" client:idle /></a>
+          ><Hacktxt text="Notes" client:idle /></a
+        >
       </li>
     </ul>
   </nav>
