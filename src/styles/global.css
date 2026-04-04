@@ -36,4 +36,9 @@
   @supports (interpolate-size: allow-keywords) {
     interpolate-size: allow-keywords;
   }
+
+  @view-transition {
+    navigation: auto;
+  }
+ 
 }
