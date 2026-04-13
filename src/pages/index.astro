@@ -40,6 +40,7 @@ const info = {
   };
 
   btn.addEventListener("click", () => {
+    navigator.vibrate(100);
     toggle_state();
   });
 </script>
@@ -51,7 +52,7 @@ const info = {
   >
     <button
       title="show navigations"
-      class="grid w-full cursor-pointer place-items-center mb-6 bg-cyan-400/10"
+      class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
       id="navigationBtn"
       ><Icon
         class={"icon-a text-orange-400"}
@@ -104,7 +105,30 @@ const info = {
     </div>
   </main>
 
-  <section class="h-lvh w-full bg-yellow-300"></section>
+  <section
+    class="my-6 grid h-lvh w-full grid-cols-6 grid-rows-6 gap-8 py-6"
+  >
+    <div
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-1 col-end-4 row-start-1 row-end-4 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+    >
+    </div>
+    <div
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-5 row-end-2 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+    >
+    </div>
+    <div
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-1 col-end-4 row-start-7 row-end-4 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+    >
+    </div>
+    <div
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-7 row-end-5 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+    >
+    </div>
+    <div
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-1 row-end-2 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+    >
+    </div>
+  </section>
   <section class="h-lvh w-full bg-blue-300"></section>
   <section class="h-lvh w-full bg-pink-300"></section>
 
