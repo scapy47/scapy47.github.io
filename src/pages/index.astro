@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/react/ui/Hacktxt";
 import { Icon } from "astro-icon/components";
+import { cn } from "@/lib/utils";
 
 const info = {
   year: new Date().getFullYear(),
@@ -22,26 +23,28 @@ const info = {
 </style>
 
 <script>
-  const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
-  const el = document.querySelector<HTMLDivElement>("#navigation");
+  document.addEventListener("astro:page-load", () => {
+    const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
+    const el = document.querySelector<HTMLDivElement>("#navigation");
 
-  const icon_a = document.querySelector<HTMLElement>(".icon-a");
-  const icon_b = document.querySelector<HTMLElement>(".icon-b");
+    const icon_a = document.querySelector<HTMLElement>(".icon-a");
+    const icon_b = document.querySelector<HTMLElement>(".icon-b");
 
-  const toggle_state = () => {
-    if (!el || !icon_a || !icon_b) return;
-    el.style.width =
-      el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
+    const toggle_state = () => {
+      if (!el || !icon_a || !icon_b) return;
+      el.style.width =
+        el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
 
-    el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
+      el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
 
-    icon_a.style.display = icon_a.style.display !== "none" ? "none" : "";
-    icon_b.style.display = icon_b.style.display !== "inline" ? "inline" : "";
-  };
+      icon_a.style.display = icon_a.style.display !== "none" ? "none" : "";
+      icon_b.style.display = icon_b.style.display !== "inline" ? "inline" : "";
+    };
 
-  btn.addEventListener("click", () => {
-    navigator.vibrate(100);
-    toggle_state();
+    btn.addEventListener("click", () => {
+      navigator.vibrate(100);
+      toggle_state();
+    });
   });
 </script>
 
@@ -66,30 +69,31 @@ const info = {
       />
     </button>
     <ul class="flex flex-col items-end px-6 text-7xl">
-      <li>
-        <a class="active:text-crimson hover:text-crimson" href="/"
-          ><Hacktxt text="Home" client:idle /></a
-        >
-      </li>
-      <li>
-        <a class="active:text-crimson hover:text-crimson" href="/notes"
-          ><Hacktxt text="Notes" client:idle /></a
-        >
-      </li>
-      <li>
-        <a class="active:text-crimson hover:text-crimson" href="/tools"
-          ><Hacktxt text="Tools" client:idle /></a
-        >
-      </li>
-      <li>
-        <a class="active:text-crimson hover:text-crimson" href="/scripts"
-          ><Hacktxt text="Notes" client:idle /></a
-        >
-      </li>
+      {
+        [
+          ["Home", "/"],
+          ["Notes", "/notes"],
+          ["Tools", "/tools"],
+        ].map((e) => (
+          <li>
+            <a
+              class="active:text-crimson hover:text-crimson pointer-events-auto"
+              href={e[1]}
+            >
+              <Hacktxt text={e[0]} client:idle />
+            </a>
+          </li>
+        ))
+      }
     </ul>
   </nav>
 
   <main class="flex h-lvh items-center justify-center bg-black">
+    <div
+      id="bg"
+      class="absolute inset-0 h-full w-full bg-[url(https://w.wallhaven.cc/full/6l/wallhaven-6l27v6.jpg)] bg-cover"
+    >
+    </div>
     <div
       class="corner-br-bevel border-crimson shadow-center bg-crimson/15 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
@@ -105,9 +109,7 @@ const info = {
     </div>
   </main>
 
-  <section
-    class="my-6 grid h-lvh w-full grid-cols-6 grid-rows-6 gap-8 py-6"
-  >
+  <section class="my-6 grid h-lvh w-full grid-cols-6 grid-rows-6 gap-8 py-6">
     <div
       class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-1 col-end-4 row-start-1 row-end-4 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
