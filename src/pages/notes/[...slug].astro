@@ -27,7 +27,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
   <main
     class="pointGridMatrix h-lvh selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
   >
-    <h1 class="doto-900 truncate text-6xl">
+    <h1 transition:name="title" transition:animate="slide" class="doto-900 truncate text-6xl">
       {Heading}
     </h1>
     <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>

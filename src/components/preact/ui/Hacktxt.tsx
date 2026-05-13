@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef, useState } from "preact/hooks";
 
 interface props {
   text: string;
