@@ -8,7 +8,9 @@ const paths = posts.map((e) => e.id).sort();
 
 <Layout className="mr-auto ml-auto max-w-2xl p-6" theme="black">
   <main class="m">
-    <h1 class="text-6xl">index</h1>
+    <h1 transition:name="title" transition:animate="slide" class="text-6xl">
+      index
+    </h1>
     <ul>
       {
         paths.map((e) => (
