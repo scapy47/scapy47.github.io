@@ -11,6 +11,7 @@ export async function getStaticPaths() {
 }
 
 import Layout from "@/layouts/Layout.astro";
+import Hacktxt from "@/components/preact/ui/Hacktxt";
 
 const { post } = Astro.props;
 const { Content } = await render(post);
@@ -25,10 +26,14 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
   />
 
   <main
-    class="pointGridMatrix h-lvh selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
+    class="pointGridMatrix selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
   >
-    <h1 transition:name="title" transition:animate="slide" class="doto-900 truncate text-6xl">
-      {Heading}
+    <h1
+      transition:name="title"
+      transition:animate="slide"
+      class="doto-900 text-6xl wrap-break-word"
+    >
+      <Hacktxt text={`${Heading}`} animateOnLoad={true} client:idle />
     </h1>
     <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>
     <article
@@ -83,8 +88,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
       overflow: hidden;
       border-radius: 1rem;
       border: 0.2rem dotted cyan;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto 0 auto;
     }
   </style>
   <footer class="flex w-full items-center justify-center bg-black">

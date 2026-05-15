@@ -1,13 +1,14 @@
-import { useMemo, useRef, useState } from "preact/hooks";
+import { useEffect, useMemo, useRef, useState } from "preact/hooks";
 
 interface props {
   text: string;
   className?: string;
   id?: string;
   lg?: "en" | "jp";
+  animateOnLoad?: boolean;
 }
 
-const Hacktxt = ({ text, className, lg = "en", id }: props) => {
+const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false }: props) => {
   const [txt, setTxt] = useState<string>(text);
 
   //  get unicode char
@@ -69,17 +70,26 @@ const Hacktxt = ({ text, className, lg = "en", id }: props) => {
         );
 
         runCount.current += 1 / 3;
+
+        if (runCount.current >= text.length) {
+          clearInterval(intervalRef.current!);
+          intervalRef.current = null;
+          runCount.current = 0;
+        }
+
       }, 30);
     }
 
-    if (runCount.current >= text.length) {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-        intervalRef.current = null;
-        runCount.current = 0;
-      }
-    }
+    // if (runCount.current >= text.length && intervalRef.current) {
+    //   clearInterval(intervalRef.current);
+    //   intervalRef.current = null;
+    //   runCount.current = 0;
+    // }
   };
+
+  useEffect(() => {
+    if (animateOnLoad) animation()
+  }, [])
 
   return (
     <span
