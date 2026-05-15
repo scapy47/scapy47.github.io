@@ -1,6 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Hacktxt from "@/components/preact/ui/Hacktxt";
 
 const posts = await getCollection("notes");
 const paths = posts.map((e) => e.id).sort();
@@ -8,8 +9,12 @@ const paths = posts.map((e) => e.id).sort();
 
 <Layout className="mr-auto ml-auto max-w-2xl p-6" theme="black">
   <main class="m">
-    <h1 transition:name="title" transition:animate="slide" class="text-6xl">
-      index
+    <h1
+      transition:name="title"
+      transition:animate="slide"
+      class="doto-900 text-6xl"
+    >
+      <Hacktxt animateOnLoad={true} text="Index" client:idle />
     </h1>
     <ul>
       {
@@ -23,4 +28,15 @@ const paths = posts.map((e) => e.id).sort();
       }
     </ul>
   </main>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
+
+    .doto-900 {
+      font-family: "Doto", sans-serif;
+      font-optical-sizing: auto;
+      font-weight: 900;
+      font-style: normal;
+      font-variation-settings: "ROND" 0;
+    }
+  </style>
 </Layout>

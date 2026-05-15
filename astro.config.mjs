@@ -8,6 +8,8 @@ import icon from "astro-icon";
 
 import preact from "@astrojs/preact";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://scapy47.pages.dev",
@@ -21,7 +23,8 @@ export default defineConfig({
     preact({
       include: ["**/preact/*"],
       compat: true,
-    })
+    }),
+    mdx()
   ],
 
   markdown: {
