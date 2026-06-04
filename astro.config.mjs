@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import tailwindcss from "@tailwindcss/vite";
@@ -32,7 +32,31 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
   },
 
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "JetBrains Mono",
+      cssVariable: "--font-jetbrains-mono",
+      weights: [100, 800],
+      styles: ["normal"]
+    },
+    // {
+    //   provider: fontProviders.fontsource(),
+    //   name: "",
+    //   cssVariable: "",
+    // },
+  ],
+
   vite: {
+    server: {
+      proxy: {
+        "/xo": {
+          target: "http://localhost:3000",
+          changeOrigin: true,
+        },
+      },
+    },
+
     plugins: [tailwindcss()],
   },
 });
