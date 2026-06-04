@@ -2,6 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/preact/ui/Hacktxt";
 import { Icon } from "astro-icon/components";
+import Marquee from "@/components/preact/ui/Marquee";
 // import { cn } from "@/lib/utils";
 
 const info = {
@@ -14,16 +15,21 @@ const info = {
 
   #navigation {
     transition: all 0.8s cubic-bezier(0.86, 0, 0.14, 1);
-
-    font-family: "JetBrains Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
   }
 </style>
 
 <script>
   document.addEventListener("astro:page-load", () => {
+    if (
+      !(
+        /Chrome/.test(navigator.userAgent) &&
+        !/Edg|OPR|Brave/.test(navigator.userAgent)
+      )
+    ) {
+      alert("your browser is not supported");
+      throw new Error("browser is not supported");
+    }
+
     const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
     const el = document.querySelector<HTMLDivElement>("#navigation");
 
@@ -48,17 +54,23 @@ const info = {
   });
 </script>
 
+<!-- <script> -->
+<!--   fetch("/xo/hello") -->
+<!--     .then((e) => e.json()) -->
+<!--     .then((e) => alert(e.message)); -->
+<!-- </script> -->
+
 <Layout theme="black">
   <nav
     id="navigation"
-    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
+    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 font-mono font-bold mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
   >
     <button
       title="show navigations"
       class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
       id="navigationBtn"
       ><Icon
-        class={"icon-a text-orange-400"}
+        class={"icon-a text-crimson"}
         name="line-md:compass-twotone-loop"
         size={60}
       />
@@ -88,12 +100,8 @@ const info = {
     </ul>
   </nav>
 
-  <main class="flex h-lvh items-center justify-center bg-black">
-    <div
-      id="bg"
-      class="absolute inset-0 h-full w-full bg-[url(https://w.wallhaven.cc/full/6l/wallhaven-6l27v6.jpg)] bg-cover"
-    >
-    </div>
+  <main class="flex h-lvh items-center justify-center dark:bg-black">
+    <div id="bg" class="absolute inset-0 h-full w-full"></div>
     <div
       class="corner-br-bevel border-crimson shadow-center bg-crimson/15 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
@@ -106,6 +114,11 @@ const info = {
       <Hacktxt className="text-4xl font-extralight" text=" -0" client:load />
       <p class="text-2xl text-gray-400">TARGET:</p>
       <p class="text-xl">Not Target</p>
+    </div>
+    <div>
+      <Marquee>
+        <span class="text-2xl font-extrabold">hello</span>
+      </Marquee>
     </div>
   </main>
 
@@ -131,10 +144,8 @@ const info = {
     >
     </div>
   </section>
-  <section class="h-lvh w-full bg-blue-300"></section>
-  <section class="h-lvh w-full bg-pink-300"></section>
 
-  <footer class="flex w-full items-center justify-center bg-black">
+  <footer class="flex w-full items-center justify-center font-extrabold">
     <p>Copyright (c) {info.year} Author. All Rights Reserved.</p>
   </footer>
 </Layout>

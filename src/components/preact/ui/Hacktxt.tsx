@@ -1,15 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from "preact/hooks";
+import { useSignal } from "@preact/signals"
+import type { JSX } from "preact/jsx-runtime";
 
-interface props {
+type props = {
   text: string;
   className?: string;
   id?: string;
   lg?: "en" | "jp";
   animateOnLoad?: boolean;
+  Tag?: JSX.ElementType
 }
 
-const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false }: props) => {
-  const [txt, setTxt] = useState<string>(text);
+const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false, Tag = "span" }: props) => {
+  const txt = useSignal(text);
 
   //  get unicode char
   const charVec = useMemo(() => {
@@ -59,15 +62,13 @@ const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false }: prop
   const animation = () => {
     if (!intervalRef.current) {
       intervalRef.current = setInterval(() => {
-        setTxt(
-          text
-            .split("")
-            .map((char, index) => {
-              if (index < runCount.current) return char;
-              return charVec[Math.round(Math.random() * charVec.length)];
-            })
-            .join(""),
-        );
+        txt.value = text
+          .split("")
+          .map((char, index) => {
+            if (index < runCount.current) return char;
+            return charVec[Math.round(Math.random() * charVec.length)];
+          })
+          .join("");
 
         runCount.current += 1 / 3;
 
@@ -92,7 +93,7 @@ const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false }: prop
   }, [])
 
   return (
-    <span
+    <Tag
       className={className}
       id={id}
       onTouchStart={animation}
@@ -103,7 +104,7 @@ const Hacktxt = ({ text, className, lg = "en", id, animateOnLoad = false }: prop
       onMouseLeave={animation}
     >
       {txt}
-    </span>
+    </Tag>
   );
 };
 export default Hacktxt;

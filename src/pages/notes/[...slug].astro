@@ -19,40 +19,31 @@ const fileName = post.filePath?.match(/([^/]+)(?=\.[^/.]+$)/)?.[0];
 const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
 ---
 
-<Layout theme="black" className="bg-black">
+<Layout theme="black" className="font-mono">
   <link
     href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css"
     rel="stylesheet"
   />
 
   <main
-    class="pointGridMatrix selection:bg-crimsom-red mr-auto ml-auto max-w-2xl p-6 select-text"
+    class="pointGridMatrix selection:bg-crimsom-red mr-auto ml-auto max-w-2xl px-1 select-text"
   >
     <h1
       transition:name="title"
       transition:animate="slide"
-      class="doto-900 text-6xl wrap-break-word"
+      class="doto-900 mt-6 mb-24 text-6xl wrap-break-word"
     >
       <Hacktxt text={`${Heading}`} animateOnLoad={true} client:idle />
     </h1>
-    <div class="prose bg-crimsom-red mt-4 mb-16 h-1"></div>
     <article
-      class="prose prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-p:text-lg"
+      class="prose dark:prose-invert prose-red prose-strong:text-red-600 prose-h1:text-5xl prose-h2:text-4xl prose-h3:text-3xl prose-h4:text-2xl prose-h5:text-xl prose-h6:text-lg prose-p:text-lg"
     >
       <Content />
     </article>
   </main>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap");
-    @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
-
-    html,
-    body {
-      font-family: "JetBrains Mono", monospace;
-      font-optical-sizing: auto;
-      font-weight: 600;
-      font-style: normal;
-    }
+    /* @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"); */
 
     :root {
       --color: if(
@@ -91,7 +82,7 @@ const Heading = fileName?.replace(/^./, fileName?.at(0) || "");
       margin: 0 auto 0 auto;
     }
   </style>
-  <footer class="flex w-full items-center justify-center bg-black">
+  <footer class="flex w-full items-center justify-center font-extrabold">
     <p>Copyright (c) 2026 Author. All Rights Reserved.</p>
   </footer>
 </Layout>
