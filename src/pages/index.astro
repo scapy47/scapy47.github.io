@@ -5,9 +5,6 @@ import { Icon } from "astro-icon/components";
 import Background from "@components/svelte/ui/Background.svelte";
 // import { cn } from "@/lib/utils";
 
-const info = {
-  year: new Date().getFullYear(),
-};
 ---
 
 <style>
@@ -140,8 +137,4 @@ const info = {
     >
     </div>
   </section>
-
-  <footer class="flex w-full items-center justify-center font-extrabold">
-    <p>Copyright (c) {info.year} Author. All Rights Reserved.</p>
-  </footer>
 </Layout>
