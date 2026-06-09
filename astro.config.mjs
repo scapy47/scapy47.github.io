@@ -10,22 +10,19 @@ import preact from "@astrojs/preact";
 
 import mdx from "@astrojs/mdx";
 
+import svelte from "@astrojs/svelte";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://scapy47.pages.dev",
 
-  integrations: [
-    icon({
-      include: {
-        "line-md": ["*"],
-      }
-    }),
-    preact({
-      include: ["**/preact/*"],
-      compat: true,
-    }),
-    mdx()
-  ],
+  integrations: [icon({
+    include: {
+      "line-md": ["*"],
+    }
+  }), preact({
+    compat: true,
+  }), mdx(), svelte()],
 
   markdown: {
     rehypePlugins: [rehypeKatex],
