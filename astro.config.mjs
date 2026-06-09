@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
+import { unified } from '@astrojs/markdown-remark';
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import tailwindcss from "@tailwindcss/vite";
@@ -25,8 +26,10 @@ export default defineConfig({
   }), mdx(), svelte()],
 
   markdown: {
-    rehypePlugins: [rehypeKatex],
-    remarkPlugins: [remarkMath],
+    processor: unified({
+      rehypePlugins: [rehypeKatex],
+      remarkPlugins: [remarkMath],
+    })
   },
 
   fonts: [
