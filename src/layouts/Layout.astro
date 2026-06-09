@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import Posthog from "@/components/posthog.astro";
 import "@/styles/global.css";
+import Footer from "./Footer.astro"
 
 interface Props {
   title?: string;
@@ -28,4 +29,5 @@ const { title, theme, className } = Astro.props;
   <body class={className}>
     <slot />
   </body>
+  <Footer />
 </html>
