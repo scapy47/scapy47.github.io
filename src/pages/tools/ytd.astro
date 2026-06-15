@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial-scale=1.0">
+    <title>Youtube subscription Declutter</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.fuchsia.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --pico-border-radius: 2rem;
+        }
+
+        #drop-area {
+            width: 100%;
+            height: 60vh;
+            font-weight: bolder;
+
+            .bi-upload {
+                display: block;
+                width: 100%;
+                height: 30%;
+            }
+        }
+
+
+        header {
+            text-align: center;
+        }
+
+        #modal {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden;
+
+            #next {
+                display: flex;
+                place-content: center;
+                place-items: center;
+                padding: 1rem;
+                width: 100%;
+
+                span {
+                    font-size: large;
+                    font-weight: bolder;
+                }
+            }
+        }
+
+        .showOff-div {
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            align-items: center;
+
+            #description {
+                height: 100%;
+                overflow: scroll;
+            }   
+
+            h1 {
+                text-decoration: none;
+                text-align: center;
+            }
+
+            #pic {
+                width: 8rem;
+                height: auto;
+                border-radius: 2rem;
+            }
+
+        }
+
+        #someVideos {
+            height: 100%;
+            display: flex;
+            overflow-x: scroll;
+        }
+
+        #Video-prev {
+            border-radius: 2rem;
+            padding: 0.5rem;
+            width: 100%;
+            height: 100%;
+        }
+
+        .debug {
+            background-color: indianred;
+        }
+    </style>
+</head>
+
+<body class="container">
+    <header>
+        <h1>YouTube subscription Declutter</h1>
+    </header>
+    <main>
+        <button id="drop-area">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-upload"
+                viewBox="0 0 16 16">
+                <path
+                    d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5" />
+                <path
+                    d="M7.646 1.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 2.707V11.5a.5.5 0 0 1-1 0V2.707L5.354 4.854a.5.5 0 1 1-.708-.708z" />
+            </svg>
+            <span>Drop subscriptions.csv here or click to select file</span>
+        </button>
+        <dialog id="showOffUI">
+            <div id="modal">
+                <div class="container showOff-div">
+                    <h1><a id="link" target="_blank"></a></h1>
+                    <img alt="pic" id="pic" >
+                    <div id="someVideos"></div>
+                    <p id="description"></p>
+                </div>
+                <button id="next">
+                    <span>Next</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-caret-right-fill" viewBox="0 0 16 16">
+                        <path
+                            d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z" />
+                    </svg>
+                </button>
+            </div>
+        </dialog>
+    </main>
+    <footer>
+        <h2>How to Get Your YouTube Subscriptions CSV from Google Takeout</h2>
+
+        <ol class="container">
+            <li>
+                <strong>Go to Google Takeout</strong>:
+                <a href="https://takeout.google.com/settings/takeout" target="_blank">Google Takeout</a>
+                and sign in if needed.
+            </li>
+            <li>
+                <strong>Deselect All Services</strong>: Click on "Deselect all" to uncheck all services.
+            </li>
+            <li>
+                <strong>Select YouTube Data</strong>: Scroll down, select <em>YouTube and YouTube Music</em>, and click
+                on
+                “All YouTube data included”. Uncheck everything except <em>subscriptions</em> and click <em>OK</em>.
+            </li>
+            <li>
+                <strong>Choose Export Settings</strong>: Click <em>Next step</em>. Choose the delivery method (e.g.,
+                email
+                link),
+                file type as <em>.zip</em>, and select the appropriate file size.
+            </li>
+            <li>
+                <strong>Create Export</strong>: Click <em>Create export</em> and wait for Google to prepare your data.
+            </li>
+            <li>
+                <strong>Download Your Data</strong>: After receiving the email, download the ZIP file and extract it.
+            </li>
+            <li>
+                <strong>Extract the CSV</strong>: Open the extracted folder and navigate to `YouTube and YouTube Music >
+                subscriptions`.
+                Find the CSV file containing your YouTube subscriptions.
+            </li>
+        </ol>
+        </main>
+    </footer>
+    <script type="module">
+        const Data = []
+        const dropArea = document.querySelector("#drop-area")
+        const input = document.createElement("input")
+        input.type = "file"
+        input.accept = "text/csv"
+
+        const events = ["dragleave", "dragover", "dragenter"].forEach((element) => {
+            dropArea.addEventListener(element, e => {
+                e.preventDefault()
+                e.stopPropagation()
+            })
+        })
+
+        dropArea.addEventListener("click", () => input.click())
+        input.addEventListener("change", () => {
+            createData()
+                .then(showData)
+        })
+
+        dropArea.addEventListener("drop", (e) => {
+            e.preventDefault()
+            const files = e.dataTransfer.files;
+            if (1 >= files.length) {
+                input.files = files
+            }
+            createData()
+                .then(showData)
+        })
+
+        const createData = () => {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader()
+                reader.readAsText(input.files[0])
+
+                reader.onloadend = (e) => {
+
+                    const dataArr = e.target.result.split("\n")
+                    dataArr.shift()
+
+                    dataArr.forEach(e => {
+                        const element = e.split(",")
+                        Data.push({
+                            id: element[0],
+                            url: element[1],
+                            name: element[2]
+                        })
+                    })
+                    resolve()
+                }
+                reader.onerror = () => {
+                    reject("Error reading file")
+                }
+            })
+        }
+
+        const dialog = document.querySelector("#showOffUI")
+        const next = document.querySelector("#next")
+        let count = 0
+
+        const showData = () => {
+            dialog.showModal()
+            document.querySelector("#pic").style.display = "inline"
+            document.querySelector("#someVideos").innerHTML = ""
+
+            fetch(`https://pipedapi.kavin.rocks/channel/${Data[count].id}`)
+                .then(res => res.json())
+                .then(obj => {
+                    document.querySelector("#pic").src = obj.avatarUrl
+                    document.querySelector("#description").innerText = obj.description
+                    let vcount = 0
+                    obj.relatedStreams.forEach((element) => {
+                        if (vcount === 3) return
+                        const iframe = document.createElement("iframe")
+                        iframe.src = `https://www.youtube.com/embed/${element.url.slice(9)}`
+                        iframe.title = "YouTube video player"
+                        iframe.frameborder = "0"
+                        iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        iframe.allowFullscreen = true
+                        iframe.referrerpolicy="strict-origin-when-cross-origin"
+                        iframe.width = "560"
+                        iframe.height = "315"
+                        iframe.id = "Video-prev"
+
+                        document.querySelector("#someVideos").appendChild(iframe)
+                        vcount += 1
+                    })
+                })
+            document.querySelector("#link").href = Data[count].url
+            document.querySelector("#link").innerText = Data[count].name
+            Data.shift()
+            count += 1
+        }
+        next.addEventListener("click", showData)
+    </script>
+</body>
+
+</html>
