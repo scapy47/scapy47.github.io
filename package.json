@@ -23,7 +23,7 @@
     "@tailwindcss/vite": "^4.3.0",
     "@toolwind/corner-shape": "0.0.8-3",
     "@types/three": "^0.184.1",
-    "astro": "^6.4.4",
+    "astro": "^6.4.6",
     "astro-icon": "^1.1.5",
     "clsx": "^2.1.1",
     "hono": "^4.12.24",
