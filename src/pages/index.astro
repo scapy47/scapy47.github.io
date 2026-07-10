@@ -3,8 +3,14 @@ import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/preact/ui/Hacktxt";
 import { Icon } from "astro-icon/components";
 import Background from "@components/svelte/ui/Background.svelte";
+// import Showcase from "@components/svelte/ui/Showcase.svelte";
+// import Marquee from "@components/preact/ui/Marquee";
+import Carousel from "@components/preact/ui/Carousel";
 // import { cn } from "@/lib/utils";
 
+const info = {
+  year: new Date().getFullYear(),
+};
 ---
 
 <style>
@@ -17,15 +23,15 @@ import Background from "@components/svelte/ui/Background.svelte";
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    if (
-      !(
-        /Chrome/.test(navigator.userAgent) &&
-        !/Edg|OPR|Brave/.test(navigator.userAgent)
-      )
-    ) {
-      alert("your browser is not supported");
-      throw new Error("browser is not supported");
-    }
+    // if (
+    //   !(
+    //     /Chrome/.test(navigator.userAgent) &&
+    //     !/Edg|OPR|Brave/.test(navigator.userAgent)
+    //   )
+    // ) {
+    //   alert("your browser is not supported");
+    //   throw new Error("browser is not supported");
+    // }
 
     const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
     const el = document.querySelector<HTMLDivElement>("#navigation");
@@ -97,10 +103,9 @@ import Background from "@components/svelte/ui/Background.svelte";
     </ul>
   </nav>
 
-  <main class="flex h-lvh items-center justify-center dark:bg-black">
-    <Background client:idle />
+  <main class="flex h-svh items-center justify-center">
     <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 z-10 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
       <p class="hover:text-crimson text-2xl text-gray-400">
         <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)"
@@ -112,29 +117,66 @@ import Background from "@components/svelte/ui/Background.svelte";
       <p class="text-2xl text-gray-400">TARGET:</p>
       <p class="text-xl">Not Target</p>
     </div>
-    <div></div>
+
+    <Background client:idle />
+    <div class="absolute h-svh w-full overflow-hidden">
+      <Carousel
+        client:idle
+        className="absolute top-2/6 right-3/12 w-[hypot(100%,100%)] -rotate-45 transform bg-emerald-200"
+      >
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+      </Carousel>
+
+      <Carousel
+        client:idle
+        className="absolute top-4/6 left-3/12 w-[hypot(100%,100%)] -rotate-45 transform bg-emerald-200"
+      >
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+      </Carousel>
+
+      <Carousel
+        client:idle
+        className="absolute bottom-3/6 left-2/12 w-[hypot(100%,100%)] rotate-45 transform bg-emerald-200"
+      >
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+      </Carousel>
+
+      <Carousel
+        client:idle
+        className="absolute right-3/12 bottom-2/6 w-[hypot(100%,100%)] rotate-45 transform bg-emerald-200"
+      >
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
+        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+      </Carousel>
+    </div>
   </main>
 
-  <section class="my-6 grid h-lvh w-full grid-cols-6 grid-rows-6 gap-8 py-6">
-    <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-1 col-end-4 row-start-1 row-end-4 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
-    >
-    </div>
-    <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-5 row-end-2 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
-    >
-    </div>
-    <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-1 col-end-4 row-start-7 row-end-4 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
-    >
-    </div>
-    <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-7 row-end-5 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
-    >
-    </div>
-    <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 col-start-7 col-end-4 row-start-1 row-end-2 h-full w-full animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
-    >
-    </div>
-  </section>
+  <!-- <Showcase  /> -->
 </Layout>

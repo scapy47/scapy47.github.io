@@ -11,6 +11,17 @@
   --animate-marquee: marquee var(--duration) infinite linear;
   --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
+  --animate-carousel: carousel var(--duration, 6s) infinite linear;
+
+  @keyframes carousel {
+    from {
+      translate: 0;
+    }
+    to {
+      translate: -100%;
+    }
+  }
+
   @keyframes marquee {
     from {
       transform: translateX(0);
@@ -30,13 +41,35 @@
 }
 
 @layer base {
+  :root {
+    @supports (scrollbar-width: auto) {
+      scrollbar-color: var(--color-crimson) black;
+      scrollbar-width: thin;
+    }
+    @supports (interpolate-size: allow-keywords) {
+      interpolate-size: allow-keywords;
+    }
+    @media (prefers-color-scheme: dark) {
+      color-scheme: dark;
+    }
+  }
   html, body {
-    @apply m-0 h-full w-full p-0 select-none dark:bg-black dark:text-white;
+    background-color: light-dark(var(--color-white), var(--color-black));
+    color: light-dark(var(--color-black), var(--color-white));
+    user-select: none;
   }
 }
 
 @utility shadow-center {
   box-shadow: 0 0 2.2rem 0.6rem color-mix(in srgb, var(--color-crimson) 30%, transparent);
+}
+
+@utility card {
+  @apply corner-br-bevel border-crimson shadow-center bg-crimson/15 animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl;
+
+  @supports not (corner-shape: bevel) {
+    border-radius: 0;
+  }
 }
 
 @utility wMode-vlr {
@@ -49,15 +82,4 @@
 
 @utility textO-upright {
   text-orientation: upright;
-}
-
-:root {
-  @supports (scrollbar-width: auto) {
-    scrollbar-color: var(--color-crimson) black;
-    scrollbar-width: thin;
-  }
-  @supports (interpolate-size: allow-keywords) {
-    interpolate-size: allow-keywords;
-  }
-
 }
