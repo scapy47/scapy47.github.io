@@ -4,6 +4,7 @@
 
 @theme {
   --color-crimson: #dc143c;
+  --color-electric-orange: #ff3503;
   --font-mono: var(--font-jetbrains-mono, monospace);
 }
 
