@@ -73,12 +73,12 @@ const info = {
       class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
       id="navigationBtn"
       ><Icon
-        class={"icon-a text-crimson"}
+        class={"icon-a text-electric-orange"}
         name="line-md:compass-twotone-loop"
         size={60}
       />
       <Icon
-        class={"icon-b hidden text-crimson"}
+        class={"icon-b hidden text-electric-orange"}
         name="line-md:close"
         size={60}
       />
@@ -92,7 +92,7 @@ const info = {
         ].map((e) => (
           <li>
             <a
-              class="active:text-crimson hover:text-crimson pointer-events-auto"
+              class="active:text-electric-orange hover:text-crimson pointer-events-auto"
               href={e[1]}
             >
               <Hacktxt text={e[0]} client:idle />
@@ -107,7 +107,7 @@ const info = {
     <div
       class="corner-br-bevel border-crimson shadow-center bg-crimson/15 z-10 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
     >
-      <p class="hover:text-crimson text-2xl text-gray-400">
+      <p class="hover:text-electric-orange text-2xl text-gray-400">
         <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)"
           >CRIME COEFFICIENT:</a
         >
@@ -118,62 +118,52 @@ const info = {
       <p class="text-xl">Not Target</p>
     </div>
 
-    <Background client:idle />
-    <div class="absolute h-svh w-full overflow-hidden">
+    <!-- <Background client:idle /> -->
+    <div
+      class="absolute h-svh w-full overflow-hidden text-9xl font-extrabold [--duration:20s]"
+    >
       <Carousel
-        client:idle
-        className="absolute top-2/6 right-3/12 w-[hypot(100%,100%)] -rotate-45 transform bg-emerald-200"
+        rep={6}
+        className="border-electric-orange text-electric-orange absolute top-2/6 right-3/12 w-[hypot(100%,100%)] -rotate-45 transform border-2"
       >
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <Icon name="line-md:chevron-triple-left" />
+        <Icon name="line-md:hazard-lights-loop" />
+        <span>47</span>
+        <Icon name="line-md:hazard-lights-loop" />
+        <Icon name="line-md:chevron-triple-right" />
       </Carousel>
 
       <Carousel
-        client:idle
-        className="absolute top-4/6 left-3/12 w-[hypot(100%,100%)] -rotate-45 transform bg-emerald-200"
+        rep={6}
+        className="border-electric-orange text-electric-orange absolute top-4/6 left-3/12 w-[hypot(100%,100%)] -rotate-45 transform border-2"
       >
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <Icon name="line-md:chevron-triple-left" />
+        <Icon name="line-md:hazard-lights-loop" />
+        <span>47</span>
+        <Icon name="line-md:hazard-lights-loop" />
+        <Icon name="line-md:chevron-triple-right" />
       </Carousel>
 
       <Carousel
-        client:idle
-        className="absolute bottom-3/6 left-2/12 w-[hypot(100%,100%)] rotate-45 transform bg-emerald-200"
+        rep={6}
+        className="border-electric-orange text-electric-orange absolute bottom-3/6 left-2/12 w-[hypot(100%,100%)] rotate-45 transform border-2"
       >
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <Icon name="line-md:chevron-triple-left" />
+        <Icon name="line-md:hazard-lights-loop" />
+        <span>47</span>
+        <Icon name="line-md:hazard-lights-loop" />
+        <Icon name="line-md:chevron-triple-right" />
       </Carousel>
 
       <Carousel
-        client:idle
-        className="absolute right-3/12 bottom-2/6 w-[hypot(100%,100%)] rotate-45 transform bg-emerald-200"
+        rep={6}
+        className="border-electric-orange text-electric-orange absolute right-3/12 bottom-2/6 w-[hypot(100%,100%)] rotate-45 transform border-2"
       >
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
-        <div class="bg-red-300 text-center text-9xl font-bold">hello</div>
-        <div class="bg-red-400 text-center text-9xl font-bold">there</div>
+        <Icon name="line-md:chevron-triple-left" />
+        <Icon name="line-md:hazard-lights-loop" />
+        <span>47</span>
+        <Icon name="line-md:hazard-lights-loop" />
+        <Icon name="line-md:chevron-triple-right" />
       </Carousel>
     </div>
   </main>
