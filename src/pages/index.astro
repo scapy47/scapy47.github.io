@@ -7,10 +7,6 @@ import Background from "@components/svelte/ui/Background.svelte";
 // import Marquee from "@components/preact/ui/Marquee";
 import Carousel from "@components/preact/ui/Carousel";
 // import { cn } from "@/lib/utils";
-
-const info = {
-  year: new Date().getFullYear(),
-};
 ---
 
 <style>
@@ -23,17 +19,7 @@ const info = {
 
 <script>
   document.addEventListener("astro:page-load", () => {
-    // if (
-    //   !(
-    //     /Chrome/.test(navigator.userAgent) &&
-    //     !/Edg|OPR|Brave/.test(navigator.userAgent)
-    //   )
-    // ) {
-    //   alert("your browser is not supported");
-    //   throw new Error("browser is not supported");
-    // }
-
-    const btn = document.querySelector("#navigationBtn") as HTMLButtonElement;
+    const btn = document.querySelector<HTMLButtonElement>("#navigationBtn");
     const el = document.querySelector<HTMLDivElement>("#navigation");
 
     const icon_a = document.querySelector<HTMLElement>(".icon-a");
@@ -44,14 +30,16 @@ const info = {
       el.style.width =
         el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
 
+      el.ariaExpanded = el.ariaExpanded !== "true" ? "ture" : "";
+
       el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
 
       icon_a.style.display = icon_a.style.display !== "none" ? "none" : "";
       icon_b.style.display = icon_b.style.display !== "inline" ? "inline" : "";
     };
 
-    btn.addEventListener("click", () => {
-      navigator.vibrate(100);
+    btn?.addEventListener("click", (_e) => {
+      navigator?.vibrate(100);
       toggle_state();
     });
   });
@@ -65,20 +53,22 @@ const info = {
 
 <Layout theme="black">
   <nav
+    aria-expanded="false"
     id="navigation"
-    class="border-crimson corner-bevel shadow-center bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 font-mono font-bold mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
+    class="border-crimson corner-bevel bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 font-mono font-bold mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
   >
     <button
+      aria-expanded="false"
       title="show navigations"
       class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
       id="navigationBtn"
       ><Icon
-        class={"icon-a text-electric-orange"}
+        class={"icon-a text-golden-amber"}
         name="line-md:compass-twotone"
         size={60}
       />
       <Icon
-        class={"icon-b hidden text-electric-orange"}
+        class={"icon-b hidden text-golden-amber"}
         name="line-md:close"
         size={60}
       />
@@ -92,7 +82,7 @@ const info = {
         ].map((e) => (
           <li>
             <a
-              class="active:text-electric-orange hover:text-crimson pointer-events-auto"
+              class="active:text-golden-amber hover:text-crimson pointer-events-auto"
               href={e[1]}
             >
               <Hacktxt text={e[0]} client:idle />
@@ -105,26 +95,35 @@ const info = {
 
   <main class="flex h-svh items-center justify-center">
     <div
-      class="corner-br-bevel border-crimson shadow-center bg-crimson/15 z-10 h-fit w-fit animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl"
+      class="corner-br-bevel border-crimson bg-crimson/15 z-10 flex w-2xl animate-pulse justify-evenly rounded-br-4xl border-4 p-2 backdrop-blur-3xl"
     >
-      <p class="hover:text-electric-orange text-2xl text-gray-400">
-        <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)"
-          >CRIME COEFFICIENT:</a
-        >
-      </p>
-      <Hacktxt className="text-6xl font-extralight" text="0.00" client:load />
-      <Hacktxt className="text-4xl font-extralight" text=" -0" client:load />
-      <p class="text-2xl text-gray-400">TARGET:</p>
-      <p class="text-xl">Not Target</p>
+      <!-- <p class="hover:text-golden-amber text-2xl text-gray-400"> -->
+      <!--   <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)" -->
+      <!--     >CRIME COEFFICIENT:</a -->
+      <!--   > -->
+      <!-- </p> -->
+      <!-- <Hacktxt className="text-6xl font-extralight" text="0.00" client:load /> -->
+      <!-- <Hacktxt className="text-4xl font-extralight" text=" -0" client:load /> -->
+      <!-- <p class="text-2xl text-gray-400">TARGET:</p> -->
+      <!-- <p class="text-xl">Not Target</p> -->
+      <div class="w-full">
+        <Icon
+          name="line-md:hazard-lights"
+          class="bg-crimson text-golden-amber h-full w-full"
+        />
+      </div>
+      <div class="w-full pl-2">
+        <p class="font-mono text-4xl font-extrabold uppercase">
+          User: <Hacktxt client:idle animateOnLoad text="scapy_47" />
+        </p>
+      </div>
     </div>
 
     <!-- <Background client:idle /> -->
-    <div
-      class="absolute h-svh w-full overflow-hidden text-9xl font-extrabold [--duration:20s]"
-    >
+    <div class="absolute h-svh w-full overflow-hidden text-9xl font-extrabold">
       <Carousel
         rep={6}
-        className="border-electric-orange text-electric-orange absolute top-1/6 right-2/12 w-[hypot(100%,100%)] -rotate-45 transform border-2 md:top-2/6 md:right-3/12"
+        className="border-electric-orange text-golden-amber absolute right-3/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-2/6"
       >
         <Icon name="line-md:chevron-triple-left" />
         <Icon name="line-md:hazard-lights" />
@@ -135,7 +134,7 @@ const info = {
 
       <Carousel
         rep={6}
-        className="border-electric-orange text-electric-orange absolute top-8/12 left-2/12 w-[hypot(100%,100%)] -rotate-45 transform border-2 md:top-4/6 md:left-3/12"
+        className="border-electric-orange text-golden-amber absolute top-8/12 left-4/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-4/6 md:left-3/12"
       >
         <Icon name="line-md:chevron-triple-left" />
         <Icon name="line-md:hazard-lights" />
@@ -146,7 +145,7 @@ const info = {
 
       <Carousel
         rep={6}
-        className="border-electric-orange text-electric-orange absolute bottom-8/12 left-2/12 w-[hypot(100%,100%)] rotate-45 transform border-2 md:bottom-3/6"
+        className="border-electric-orange text-golden-amber absolute left-2/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:bottom-3/6"
       >
         <Icon name="line-md:chevron-triple-left" />
         <Icon name="line-md:hazard-lights" />
@@ -157,7 +156,7 @@ const info = {
 
       <Carousel
         rep={6}
-        className="border-electric-orange text-electric-orange absolute right-1/12 bottom-2/12 w-[hypot(100%,100%)] rotate-45 transform border-2 md:right-3/12 md:bottom-2/6"
+        className="border-electric-orange text-golden-amber absolute right-1/12 bottom-1/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:right-3/12 md:bottom-2/6"
       >
         <Icon name="line-md:chevron-triple-left" />
         <Icon name="line-md:hazard-lights" />

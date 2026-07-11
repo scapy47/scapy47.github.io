@@ -5,6 +5,7 @@
 @theme {
   --color-crimson: #dc143c;
   --color-electric-orange: #ff3503;
+  --color-golden-amber: #ffb000;
   --font-mono: var(--font-jetbrains-mono, monospace);
 }
 
@@ -66,7 +67,7 @@
 }
 
 @utility card {
-  @apply corner-br-bevel border-crimson shadow-center bg-crimson/15 animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl;
+  @apply corner-br-bevel border-crimson bg-crimson/15 animate-pulse rounded-br-4xl border-2 p-2 italic backdrop-blur-3xl;
 
   @supports not (corner-shape: bevel) {
     border-radius: 0;
