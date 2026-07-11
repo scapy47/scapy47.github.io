@@ -41,9 +41,10 @@ export default defineConfig({
       styles: ["normal"]
     },
     // {
-    //   provider: fontProviders.fontsource(),
-    //   name: "",
-    //   cssVariable: "",
+    //   provider: fontProviders.google(),
+    //   name: "Geist Pixel",
+    //   cssVariable: "--font-geist-pixel",
+    //   styles: ["normal"]
     // },
   ],
 
