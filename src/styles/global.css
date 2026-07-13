@@ -44,15 +44,13 @@
 
 @layer base {
   :root {
+    color-scheme: light dark;
     @supports (scrollbar-width: auto) {
       scrollbar-color: var(--color-crimson) black;
       scrollbar-width: thin;
     }
     @supports (interpolate-size: allow-keywords) {
       interpolate-size: allow-keywords;
-    }
-    @media (prefers-color-scheme: dark) {
-      color-scheme: dark;
     }
   }
   html, body {
