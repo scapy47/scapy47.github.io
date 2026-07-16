@@ -2,8 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import Hacktxt from "@/components/preact/ui/Hacktxt";
 import { Icon } from "astro-icon/components";
-import Background from "@components/svelte/ui/Background.svelte";
-// import Showcase from "@components/svelte/ui/Showcase.svelte";
+// import Background from "@components/svelte/ui/Background.svelte";
+import Showcase from "@components/svelte/ui/Showcase.svelte";
 // import Marquee from "@components/preact/ui/Marquee";
 import Carousel from "@components/preact/ui/Carousel";
 // import { cn } from "@/lib/utils";
@@ -14,6 +14,11 @@ import Carousel from "@components/preact/ui/Carousel";
 
   #navigation {
     transition: all 0.8s cubic-bezier(0.86, 0, 0.14, 1);
+  }
+
+  .show-navigation {
+    height: fit-content;
+    width: calc(100% - 2rem);
   }
 </style>
 
@@ -27,18 +32,13 @@ import Carousel from "@components/preact/ui/Carousel";
 
     const toggle_state = () => {
       if (!el || !icon_a || !icon_b) return;
-      el.style.width =
-        el.style.width !== "calc(100% - 2rem)" ? "calc(100% - 2rem)" : "";
-
+      el.classList.toggle("show-navigation");
       el.ariaExpanded = el.ariaExpanded !== "true" ? "ture" : "";
-
-      el.style.height = el.style.height !== "fit-content" ? "fit-content" : "";
-
       icon_a.style.display = icon_a.style.display !== "none" ? "none" : "";
       icon_b.style.display = icon_b.style.display !== "inline" ? "inline" : "";
     };
 
-    btn?.addEventListener("click", (_e) => {
+    btn?.addEventListener("click", () => {
       navigator?.vibrate(100);
       toggle_state();
     });
@@ -52,120 +52,118 @@ import Carousel from "@components/preact/ui/Carousel";
 <!-- </script> -->
 
 <Layout theme="black">
-  <nav
-    aria-expanded="false"
-    id="navigation"
-    class="border-crimson corner-bevel bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 font-mono font-bold mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
-  >
-    <button
+  <header>
+    <nav
       aria-expanded="false"
-      title="show navigations"
-      class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
-      id="navigationBtn"
-      ><Icon
-        class={"icon-a text-golden-amber"}
-        name="line-md:compass-twotone"
-        size={60}
-      />
-      <Icon
-        class={"icon-b hidden text-golden-amber"}
-        name="line-md:close"
-        size={60}
-      />
-    </button>
-    <ul class="flex flex-col items-end px-6 text-7xl">
-      {
-        [
-          ["Home", "/"],
-          ["Notes", "/notes"],
-          ["Tools", "/tools"],
-        ].map((e) => (
-          <li>
-            <a
-              class="active:text-golden-amber hover:text-crimson pointer-events-auto"
-              href={e[1]}
-            >
-              <Hacktxt text={e[0]} client:idle />
-            </a>
-          </li>
-        ))
-      }
-    </ul>
-  </nav>
-
-  <main class="flex h-svh items-center justify-center">
-    <div
-      class="corner-br-bevel border-crimson bg-crimson/15 z-10 flex w-2xl animate-pulse justify-evenly rounded-br-4xl border-4 p-2 backdrop-blur-3xl"
+      id="navigation"
+      class="border-crimson corner-bevel bg-crimson/35 fixed right-4 bottom-4 z-50 h-16 w-3/12 overflow-hidden rounded-tl-4xl rounded-br-4xl border-2 font-mono font-bold mix-blend-difference backdrop-blur-3xl lg:top-4 lg:w-2/12"
     >
-      <!-- <p class="hover:text-golden-amber text-2xl text-gray-400"> -->
-      <!--   <a href="https://psychopass.fandom.com/wiki/Crime_Coefficient_(Index)" -->
-      <!--     >CRIME COEFFICIENT:</a -->
-      <!--   > -->
-      <!-- </p> -->
-      <!-- <Hacktxt className="text-6xl font-extralight" text="0.00" client:load /> -->
-      <!-- <Hacktxt className="text-4xl font-extralight" text=" -0" client:load /> -->
-      <!-- <p class="text-2xl text-gray-400">TARGET:</p> -->
-      <!-- <p class="text-xl">Not Target</p> -->
-      <div class="w-full">
-        <Icon
-          name="line-md:hazard-lights"
-          class="bg-crimson text-golden-amber h-full w-full"
+      <button
+        aria-expanded="false"
+        title="show navigations"
+        class="mb-6 grid w-full cursor-pointer place-items-center bg-cyan-400/10"
+        id="navigationBtn"
+        ><Icon
+          class={"icon-a text-golden-amber"}
+          name="line-md:compass-twotone"
+          size={60}
         />
+        <Icon
+          class={"icon-b hidden text-golden-amber"}
+          name="line-md:close"
+          size={60}
+        />
+      </button>
+      <ul class="flex flex-col items-end px-6 text-7xl">
+        {
+          [
+            ["Home", "/"],
+            ["Notes", "/notes"],
+            ["Tools", "/tools"],
+          ].map((e) => (
+            <li>
+              <a
+                class="active:text-golden-amber hover:text-crimson pointer-events-auto"
+                href={e[1]}
+              >
+                <Hacktxt text={e[0]} client:idle />
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="flex h-svh items-center justify-center">
+      <div
+        class="corner-br-bevel border-crimson bg-crimson/15 z-10 flex w-2xl animate-pulse justify-evenly rounded-br-4xl border-4 p-2 backdrop-blur-3xl"
+      >
+        <div class="w-full">
+          <Icon
+            name="line-md:hazard-lights"
+            class="bg-crimson text-golden-amber h-full w-full"
+          />
+        </div>
+        <div class="w-full pl-2">
+          <p class="font-mono text-4xl font-extrabold uppercase">
+            User: <Hacktxt client:idle animateOnLoad text="scapy_47" />
+          </p>
+        </div>
       </div>
-      <div class="w-full pl-2">
-        <p class="font-mono text-4xl font-extrabold uppercase">
-          User: <Hacktxt client:idle animateOnLoad text="scapy_47" />
-        </p>
+
+      <!-- <Background client:idle /> -->
+      <div
+        class="absolute h-svh w-full overflow-hidden text-9xl font-extrabold"
+      >
+        <Carousel
+          rep={6}
+          className="border-electric-orange text-golden-amber absolute right-3/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-2/6"
+        >
+          <Icon name="line-md:chevron-triple-left" />
+          <Icon name="line-md:hazard-lights" />
+          <span>47</span>
+          <Icon name="line-md:hazard-lights" />
+          <Icon name="line-md:chevron-triple-right" />
+        </Carousel>
+
+        <Carousel
+          rep={6}
+          className="border-electric-orange text-golden-amber absolute top-8/12 left-4/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-4/6 md:left-3/12"
+        >
+          <Icon name="line-md:chevron-triple-left" />
+          <Icon name="line-md:hazard-lights" />
+          <span>47</span>
+          <Icon name="line-md:hazard-lights" />
+          <Icon name="line-md:chevron-triple-right" />
+        </Carousel>
+
+        <Carousel
+          rep={6}
+          className="border-electric-orange text-golden-amber absolute left-2/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:bottom-3/6"
+        >
+          <Icon name="line-md:chevron-triple-left" />
+          <Icon name="line-md:hazard-lights" />
+          <span>47</span>
+          <Icon name="line-md:hazard-lights" />
+          <Icon name="line-md:chevron-triple-right" />
+        </Carousel>
+
+        <Carousel
+          rep={6}
+          className="border-electric-orange text-golden-amber absolute right-1/12 bottom-1/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:right-3/12 md:bottom-2/6"
+        >
+          <Icon name="line-md:chevron-triple-left" />
+          <Icon name="line-md:hazard-lights" />
+          <span>47</span>
+          <Icon name="line-md:hazard-lights" />
+          <Icon name="line-md:chevron-triple-right" />
+        </Carousel>
       </div>
-    </div>
-
-    <!-- <Background client:idle /> -->
-    <div class="absolute h-svh w-full overflow-hidden text-9xl font-extrabold">
-      <Carousel
-        rep={6}
-        className="border-electric-orange text-golden-amber absolute right-3/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-2/6"
-      >
-        <Icon name="line-md:chevron-triple-left" />
-        <Icon name="line-md:hazard-lights" />
-        <span>47</span>
-        <Icon name="line-md:hazard-lights" />
-        <Icon name="line-md:chevron-triple-right" />
-      </Carousel>
-
-      <Carousel
-        rep={6}
-        className="border-electric-orange text-golden-amber absolute top-8/12 left-4/12 w-[hypot(100%,100%)] -rotate-45 transform border-8 bg-black/70 [--duration:20s] md:top-4/6 md:left-3/12"
-      >
-        <Icon name="line-md:chevron-triple-left" />
-        <Icon name="line-md:hazard-lights" />
-        <span>47</span>
-        <Icon name="line-md:hazard-lights" />
-        <Icon name="line-md:chevron-triple-right" />
-      </Carousel>
-
-      <Carousel
-        rep={6}
-        className="border-electric-orange text-golden-amber absolute left-2/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:bottom-3/6"
-      >
-        <Icon name="line-md:chevron-triple-left" />
-        <Icon name="line-md:hazard-lights" />
-        <span>47</span>
-        <Icon name="line-md:hazard-lights" />
-        <Icon name="line-md:chevron-triple-right" />
-      </Carousel>
-
-      <Carousel
-        rep={6}
-        className="border-electric-orange text-golden-amber absolute right-1/12 bottom-1/12 w-[hypot(100%,100%)] rotate-45 transform border-8 bg-black/70 [--duration:12s] md:right-3/12 md:bottom-2/6"
-      >
-        <Icon name="line-md:chevron-triple-left" />
-        <Icon name="line-md:hazard-lights" />
-        <span>47</span>
-        <Icon name="line-md:hazard-lights" />
-        <Icon name="line-md:chevron-triple-right" />
-      </Carousel>
-    </div>
+    </section>
+    <section class="h-lvh w-full">
+      <Showcase client:idle />
+    </section>
   </main>
-
-  <!-- <Showcase  /> -->
 </Layout>
